@@ -467,6 +467,10 @@ footer .center {
   .chibi, .bg {
     display: none;
   }
+
+  footer {
+    padding-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 600px) {
