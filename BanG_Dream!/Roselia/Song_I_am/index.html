@@ -1,0 +1,84 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song I am. | KAGI 鍵</title>
+  {% include head.html %}
+</head>
+<body>
+  {% include nav.html %}
+  <div class="wrapper">
+    <header>
+      <a href=".."><img src="/assets/images/BanG_Dream!/roselia_logo.png" height="70px"></a>
+    </header>
+    <div class="content">
+      <div class="main">
+        <div class="box">
+          <h2><a href="../Song_I_am" style="color: inherit;">Song I am.</a></h2>
+          <span class="centerimg"><img src="https://i.bandori.party/u/s/239Song-I-am-eXbxkH.png" class="cover responsive"></span>
+          <p style="text-align: center; margin-bottom: 0;">Lyrics: Oda Asuka (Elements Garden)</p>
+          <p style="text-align: center; margin: 0;">Composer: Fujinaga Ryutarou (Elements Garden)</p>
+          <p style="text-align: center; margin-top: 0;">Arrangement: Fujinaga Ryutarou (Elements Garden)</p>
+          <div class="dropdown">
+            <button onclick="Dropdown()">Download</button>
+            <div id="dropdown" class="dropdown-content">
+              <a href="https://ouo.io/9huKmr" target="_blank">GP</a>
+              <a href="https://ouo.io/qOiVx1" target="_blank">GPX</a>
+            </div>
+          </div>
+          <p>If you don't understand or confused, please read the <a href="/faq">FAQ</a>.</p>
+          <blockquote>EDIT FOR YOURSELF IS OK, BUT DON'T REUPLOAD IT ANYWHERE, PLEASE APPRECIATE MY EFFORT!</blockquote>
+        </div>
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_config = function () {
+        this.page.url = 'https://kagi-music.github.io/BanG_Dream!/Roselia/Song_I_am/index.html';
+        this.page.identifier = 'song_i_am';
+        };
+
+        (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kagi-music.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+      {% include sidebar.html %}
+    </div>
+  </div>
+  <div class="chibi" id="chibi">
+    <script>
+      var img = [
+        "https://i.bandori.party/u/cos/chibi/2234u-cos-chibi-tiny-2234u-cos-chibi-vAsBiQYukina-Minato-Power-chibi-0NKTjr-p-HS6oJj.png",
+        "https://i.bandori.party/u/cos/chibi/2239u-cos-chibi-tiny-2239u-cos-chibi-Elal6YSayo-Hikawa-Power-chibi-Kq4ojw-png-Vl81nZ.png",
+        "https://i.bandori.party/u/cos/chibi/2225u-cos-chibi-tiny-2225u-cos-chibi-URHc3TLisa-Imai-Cool-chibi-hrNCgw-png-p9-PazuE2.png",
+        "https://i.bandori.party/u/cos/chibi/2229u-cos-chibi-tiny-2229u-cos-chibi-Vix5ZRAko-Udagawa-Cool-chibi-8M4Epu-png--7tM4ZL.png",
+        "https://i.bandori.party/u/cos/chibi/2231u-cos-chibi-tiny-2231u-cos-chibi-bAdEBHRinko-Shirokane-Power-chibi-qKHkfD-JSQyvG.png",
+      ]
+
+      var bg = document.getElementById("chibi");
+
+      function chibi(num) {
+        var num = Math.floor(Math.random() * 5);
+        bg.style.backgroundImage = 'url("' + img[num] +'")';
+        bg.style.backgroundSize = 'auto 200px';
+        bg.style.backgroundAttachment = 'fixed';
+        bg.style.backgroundRepeat = 'no-repeat';
+        bg.style.backgroundPosition = '100% 100%';
+      }
+
+      chibi();
+    </script>
+  </div>
+  {% include footer.html %}
+  <button class="back-to-top" id="topbtn"><i class="fas fa-angle-up"></i></button>
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>
