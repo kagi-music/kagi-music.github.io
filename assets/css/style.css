@@ -94,10 +94,6 @@ nav a:hover {
   border-bottom: 4px solid #50b8e7;
 }
 
-nav .active {
-  border-bottom: 4px solid #50b8e7;
-}
-
 /* Theme Switcher */
 .switch {
   float: left;
@@ -508,10 +504,6 @@ footer .center {
 
   nav a:hover {
     border: none;
-  }
-
-  nav .active {
-    border-bottom: none;
   }
 
   .dark-border {
