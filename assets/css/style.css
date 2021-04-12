@@ -92,6 +92,10 @@ nav a {
 
 nav a:hover {
   border-bottom: 4px solid #50b8e7;
+  transition: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
 }
 
 /* Theme Switcher */
@@ -494,11 +498,17 @@ footer .center {
   }
 
   nav .left {
-    display: none;
+    background: #eee;
+    position: fixed;
+    display: block;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
   }
 
   nav .left.mobile {
-    display: block;
+    transform: translateY(19%);
+    transition: transform 0.5s ease-in-out;
   }
 
   nav a {
