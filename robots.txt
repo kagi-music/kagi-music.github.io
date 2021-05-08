@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /assets
 Disallow: /_includes
+Sitemap: https://kagi-music.github.io/sitemap.xml
