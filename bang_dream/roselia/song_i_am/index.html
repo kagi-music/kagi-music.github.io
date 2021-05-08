@@ -1,0 +1,86 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song I am. | KAGI 鍵</title>
+  <meta name="description" content="Roselia「Song I am.」guitar tab.">
+  {% include head.html %}
+</head>
+<body>
+  {% include nav.html %}
+  <div class="wrapper">
+		<header>
+			<a href=".."><img src="/assets/images/logo_roselia.png" class="responsive" style="max-width: 150px;"></a>
+		</header>
+		<div class="content">
+      <div class="main roselia">
+        <div class="area">
+          <div class="song-title"><a href=".">Song I am.</a></div>
+          <div class="song-cover"><img src="https://i.bandori.party/u/s/239Song-I-am-eXbxkH.png" class="responsive" style="max-width: 200px;"></div>
+          <div class="songwriter">
+            <div>Lyrics: Oda Asuka (Element Garden)</div>
+            <div>Composer: Fujinaga Ryutarou (Elements Garden)</div>
+            <div>Arrangement: Fujinaga Ryutarou (Elements Garden)</div>
+          </div>
+          <div class="download roselia">
+            <button class="downloadbtn" onclick="Download()">Download</button>
+            <div id="DownloadContent" class="content">
+              <a href="https://ouo.io/9huKmr" target="_blank">GP</a>
+              <a href="https://ouo.io/qOiVx1" target="_blank">GPX</a>
+            </div>
+          </div>
+          <p>Please consider to read the <a href="/faq">FAQ</a> before asking a question.</p>
+          <blockquote>EDIT FOR YOURSELF IS OK, BUT DON'T REUPLOAD IT ANYWHERE, PLEASE APPRECIATE MY EFFORT!</blockquote>
+        </div>
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+          this.page.url = 'https://kagi-music.github.io/bang_dream/roselia/song_i_am/index.html';
+          this.page.identifier = 'roselia_songiam';
+          };
+            
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://kagi-ongaku.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+      {% include sidebar.html %}
+		</div>
+	</div>
+  {% include footer.html %}
+  <div id="character" class="character"></div>
+  <script>
+    var img = [
+      "https://i.bandori.party/u/cos/chibi/2234u-cos-chibi-tiny-2234u-cos-chibi-vAsBiQYukina-Minato-Power-chibi-0NKTjr-p-HS6oJj.png",
+      "https://i.bandori.party/u/cos/chibi/2239u-cos-chibi-tiny-2239u-cos-chibi-Elal6YSayo-Hikawa-Power-chibi-Kq4ojw-png-Vl81nZ.png",
+      "https://i.bandori.party/u/cos/chibi/2225u-cos-chibi-tiny-2225u-cos-chibi-URHc3TLisa-Imai-Cool-chibi-hrNCgw-png-p9-PazuE2.png",
+      "https://i.bandori.party/u/cos/chibi/2229u-cos-chibi-tiny-2229u-cos-chibi-Vix5ZRAko-Udagawa-Cool-chibi-8M4Epu-png--7tM4ZL.png",
+      "https://i.bandori.party/u/cos/chibi/2231u-cos-chibi-tiny-2231u-cos-chibi-bAdEBHRinko-Shirokane-Power-chibi-qKHkfD-JSQyvG.png",
+    ]
+
+    var chara = document.getElementById("character");
+
+    function Character(num) {
+      var num = Math.floor(Math.random() * 5);
+      chara.style.backgroundImage = 'url("' + img[num] +'")';
+      chara.style.backgroundSize = 'auto 200px';
+      chara.style.backgroundAttachment = 'fixed';
+      chara.style.backgroundRepeat = 'no-repeat';
+      chara.style.backgroundPosition = '100% 100%';
+    }
+
+    Character();
+  </script>
+  <button class="back-to-top" id="topbtn"><i class="fas fa-angle-up"></i></button>
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daylight -デイライト- | KAGI 鍵</title>
+  <meta name="description" content="Morfonica「Daylight」guitar tab.">
+  {% include head.html %}
+</head>
+<body>
+  {% include nav.html %}
+  <div class="wrapper">
+		<header>
+			<a href=".."><img src="/assets/images/logo_morfonica.png" class="responsive" style="max-width: 150px;"></a>
+		</header>
+		<div class="content">
+      <div class="main morfonica">
+        <div class="area">
+          <div class="song-title"><a href=".">Daylight -デイライト-</a></div>
+          <div class="song-cover"><img src="https://s3-ap-northeast-1.amazonaws.com/bang-dream-portal/e5f83146-b584-438e-bd52-fe7aeba99808.jpg" class="responsive" style="max-width: 200px;"></div>
+          <div class="songwriter">
+            <div>Lyrics: Agematsu Noriyasu (Element Garden)</div>
+            <div>Composer: Oda Asuka (Elements Garden)</div>
+            <div>Arrangement: Fujita Junpei (Elements Garden)</div>
+          </div>
+          <div class="download morfonica">
+            <button class="downloadbtn" onclick="Download()">Download</button>
+            <div id="DownloadContent" class="content">
+              <a href="https://ouo.io/IQNdl6" target="_blank">GP</a>
+              <a href="https://ouo.io/CsQEXKC" target="_blank">GPX</a>
+            </div>
+          </div>
+          <p>Please consider to read the <a href="/faq">FAQ</a> before asking a question.</p>
+          <blockquote>EDIT FOR YOURSELF IS OK, BUT DON'T REUPLOAD IT ANYWHERE, PLEASE APPRECIATE MY EFFORT!</blockquote>
+        </div>
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+          this.page.url = 'https://kagi-music.github.io/bang_dream/morfonica/daylight/index.html';
+          this.page.identifier = 'morfonica_daylight';
+          };
+            
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://kagi-ongaku.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+      {% include sidebar.html %}
+		</div>
+	</div>
+  {% include footer.html %}
+  <div id="character" class="character"></div>
+  <script>
+    var img = [
+      "https://i.bandori.party/u/cos/chibi/2304u-cos-chibi-tiny-2304u-cos-chibi-Q7YMGAMashiro-Kurata-cos-chibi-x74Wn3-pn-H6O5fR.png",
+      "https://i.bandori.party/u/cos/chibi/2307u-cos-chibi-tiny-2307u-cos-chibi-6cYuBQTouko-Kirigaya-cos-chibi-6WifQ2-pn-DjugDP.png",
+      "https://i.bandori.party/u/cos/chibi/2314u-cos-chibi-tiny-2314u-cos-chibi-HJy76YNanami-Hiromachi-cos-chibi-94yRE5--Rc52RC.png",
+      "https://i.bandori.party/u/cos/chibi/2317u-cos-chibi-tiny-2317u-cos-chibi-wlM5j8Tsukushi-Futaba-cos-chibi-H4A3pM-p-gcZb2Q.png",
+      "https://i.bandori.party/u/cos/chibi/2312u-cos-chibi-tiny-2312u-cos-chibi-NCaqQ4Rui-Yashio-cos-chibi-8FXWuZ-png-Wv-UbSiMZ.png",
+    ]
+    var chara = document.getElementById("character");
+
+    function Character(num) {
+      var num = Math.floor(Math.random() * 5);
+      chara.style.backgroundImage = 'url("' + img[num] +'")';
+      chara.style.backgroundSize = 'auto 200px';
+      chara.style.backgroundAttachment = 'fixed';
+      chara.style.backgroundRepeat = 'no-repeat';
+      chara.style.backgroundPosition = '100% 100%';
+    }
+
+    Character();
+  </script>
+  <button class="back-to-top" id="topbtn"><i class="fas fa-angle-up"></i></button>
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>

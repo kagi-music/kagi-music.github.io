@@ -1,124 +1,46 @@
-// Dark Mode
-let darkMode = localStorage.getItem('darkMode'); 
-
-const darkModeToggle = document.querySelector('#switch');
-
-const enableDarkMode = () => {
-  document.body.classList.add('dark');
-  var nav = document.getElementsByTagName("nav");
-  var x = document.getElementById("topnav");
-  var link =  x.getElementsByTagName("a");
-  var box = document.getElementsByClassName("box");
-  var footer = document.getElementsByTagName("footer");
-  var drop = document.getElementsByClassName("dropdown-content");
-  var i;
-  for (i = 0; i < nav.length; i++) {
-    nav[i].classList.add("dark-nav");
-  }
-  for (i = 0; i < link.length; i++) {
-    link[i].classList.add("dark-border");
-  }
-  for (i = 0; i < box.length; i++) {
-    box[i].classList.add("dark-box");
-  }
-  for (i = 0; i < footer.length; i++) {
-    footer[i].classList.add("dark-nav");
-  }
-  for (i = 0; i < drop.length; i++) {
-    drop[i].classList.add("dark-box");
-  }
-
-  localStorage.setItem('darkMode', 'enabled');
-}
-
-const disableDarkMode = () => {
-  document.body.classList.remove("dark");
-  var nav = document.getElementsByTagName("nav");
-  var x = document.getElementById("topnav");
-  var link =  x.getElementsByTagName("a");
-  var box = document.getElementsByClassName("box");
-  var footer = document.getElementsByTagName("footer");
-  var drop = document.getElementsByClassName("dropdown-content");
-  var i;
-  for (i = 0; i < nav.length; i++) {
-    nav[i].classList.remove("dark-nav");
-  }
-  for (i = 0; i < link.length; i++) {
-    link[i].classList.remove("dark-border");
-  }
-  for (i = 0; i < box.length; i++) {
-    box[i].classList.remove("dark-box");
-  }
-  for (i = 0; i < footer.length; i++) {
-    footer[i].classList.remove("dark-nav");
-  }
-  for (i = 0; i < drop.length; i++) {
-    drop[i].classList.remove("dark-box");
-  }
-
-  localStorage.setItem('darkMode', null);
-}
-
-if (darkMode === "enabled") {
-  enableDarkMode();
-  if (document.getElementById("theme").src == "https://kagi-music.github.io/assets/images/sun.png") {
-    document.getElementById("theme").src = "https://kagi-music.github.io/assets/images/moon.png";
+// Overlay Menu
+function Overlay() {
+  document.getElementById('overlay').classList.toggle('show');
+  if (document.getElementById('menu').innerHTML == '<i class="fas fa-bars"></i>') {
+    document.getElementById('menu').innerHTML = '<i class="fas fa-times"></i>';
   } else {
-    document.getElementById("theme").src = "https://kagi-music.github.io/assets/images/sun.png";
+    document.getElementById('menu').innerHTML = '<i class="fas fa-bars"></i>';
   }
 }
 
-darkModeToggle.addEventListener("click", () => {
-  darkMode = localStorage.getItem('darkMode');
-  
-  if (darkMode !== "enabled") {
-    enableDarkMode();
-    document.getElementById("theme").src = "https://kagi-music.github.io/assets/images/moon.png";
-  } else {
-    disableDarkMode();
-    document.getElementById("theme").src = "https://kagi-music.github.io/assets/images/sun.png";
+// Tabs
+function Tabs(evt, song) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName('tabcontent');
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none';
   }
-});
-
-// Mobile Navigation Menu
-function MobileMenu() {
-  var menu = document.getElementById("nav-left");
-  if (menu.className === "left") {
-    menu.className += " mobile";
-  } else {
-    menu.className = "left";
+  tablinks = document.getElementsByClassName('tablink');
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(' active', '');
   }
+  document.getElementById(song).style.display = 'block';
+  evt.currentTarget.className += ' active';
 }
 
-// Dropdown
-function Dropdown() {
-  if (document.getElementById("dropdown").style.display == "block") {
-    document.getElementById("dropdown").style.display = "none";
-  } else {
-    document.getElementById("dropdown").style.display = "block";
-  }
+document.getElementById('defaultOpen').click();
+
+// Download Button
+function Download() {
+  document.getElementById('DownloadContent').classList.toggle('show');
 }
-
-$(document).click(function (e) {
-  e.stopPropagation();
-  var dropdown = $(".dropdown");
-
-  if (dropdown.has(e.target).length === 0) {
-    $(".dropdown-content").hide();
-  }
-});
 
 // Back To Top
 $(document).ready(function () {
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if($(this).scrollTop() > 20) {
-      $(".back-to-top").fadeIn();
+      $('.back-to-top').fadeIn();
     } else {
-      $(".back-to-top").fadeOut();
+      $('.back-to-top').fadeOut();
     }
   });
 
-  $(".back-to-top").click(function() {
-    $("html, body").animate({scrollTop: 0}, "fast");
+  $('.back-to-top').click(function () {
+    $('html, body').animate({scrollTop: 0}, 'fast');
   });
 });
