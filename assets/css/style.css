@@ -202,7 +202,7 @@ nav {
 
 .item2 {
   grid-area: bandori;
-  background-image: url('https://www.craftegg.co.jp/wp-content/uploads/2019/12/site_garupa_kv3021.jpg');
+  background-image: url('/assets/images/bandoribg.jpg');
   background-size: cover;
   display: flex;
   align-items: flex-end;
