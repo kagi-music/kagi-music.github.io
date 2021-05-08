@@ -202,7 +202,7 @@ nav {
 
 .item2 {
   grid-area: bandori;
-  background-image: url('/assets/images/bandoribg.jpg');
+  background-image: url('https://www.craftegg.co.jp/wp-content/uploads/2019/12/site_garupa_kv3021.jpg');
   background-size: cover;
   display: flex;
   align-items: flex-end;
@@ -349,7 +349,7 @@ header a {
   list-style-type: "- ";
   font-size: 14px;
   font-weight: bold;
-  padding: 0;
+  padding-left: 5px;
 }
 
 .song-title a:hover, .song-list a:hover {
@@ -741,7 +741,7 @@ footer {
 }
 
 /* Misc */
-.back-to-top {
+#topbtn {
   position: fixed;
   display: none;
   bottom: 5px;
@@ -749,7 +749,6 @@ footer {
   background-color: #2196f3;
   color: #f0f0f0;
   font-size: 25px;
-  padding: 0 6px;
   border: none;
   outline: none;
   cursor: pointer;
