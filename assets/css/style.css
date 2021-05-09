@@ -335,6 +335,18 @@ header a {
   text-align: center;
 }
 
+.song-title.roselia {
+  color: #3344aa;
+}
+
+.song-title.morfonica {
+  color: #33aaff;
+}
+
+.song-title.guilty-kiss {
+  color: #ee0066;
+}
+
 .song-title-romaji {
   font-size: 12px;
   text-align: center;
