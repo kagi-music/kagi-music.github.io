@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KAGI 鍵</title>
   <meta name="description" content="A little piece of BanG Dream! and Love Live! song guitar tab is here.">
   <meta name="keywords" content="BanG Dream!, バンドリ!, Poppin'Party, Afterglow, Pastel Palettes, Roselia, Hello Happy World!, Morfonica, RAISE A SUILEN, Love Live!, ラブライブ, µ's, Aqours, 虹ヶ咲学園スクールアイドル同好会, 二ジガク, Nijigasaki High School Idol Club, guitar, tab, guitar tab">
@@ -24,20 +25,51 @@
     gtag('config', 'G-0SGVE78JY4');
   </script>
 </head>
-<body>
-  <div class="homepage">
-    <div class="grid-container">
-      <div class="item1">KAGI 鍵</div>
-      <a href="/bang_dream">
-        <div class="item2"><img src="/assets/images/logo_bang-dream.png" alt="BanG Dream!" width="200px"></div>
-      </a>
-      <a href="/love_live">
-        <div class="item3"><img src="/assets/images/lovelive.png" alt="Love Live!" width="200px"></div>
-      </a>
-      <div class="item4"><a href="/support"><i class="fas fa-heart"></i> Support</a></div>
-      <div class="item5"><a href="/faq"><i class="far fa-question-circle"></i> FAQ</a></div>
+<body class="homepage">
+  <div class="homepage-title-container">
+    <div class="homepage-title">KAGI 鍵</div>
+    <div class="homepage-desc">
+      Welcome to my simple website where you can download my version of BanG Dream! and Love Live! guitar tabs.
     </div>
   </div>
+  <div class="homepage-chara-container">
+    <img id="homepage-chara" class="homepage-chara" src="#">
+  </div>
+  <div id="homepage-menu" class="homepage-menu"><i class="fas fa-bars"></i></div>
+  <div class="homepage-social">
+    <a href="https://twitter.com/a_miftachul_h" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/a_miftachul_h" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/channel/UCpPwJnqt9OlFFcD4SA6YCpg" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div id="homepage-btn" class="homepage-btn">
+    <a href="/bang_dream"><button>BanG Dream!</button></a>
+    <a href="/love_live"><button>Love Live!</button></a>
+    <a href="/support"><button>Support</button></a>
+    <a href="/faq"><button>FAQ</button></a>
+  </div>
+  <script>
+    var img = [
+      "https://i.bandori.party/u/c/transparent/1392Yukina-Minato-Happy-H4IiK8.png",
+      "https://i.bandori.party/u/c/transparent/1393Sayo-Hikawa-Cool-TmwE7t.png",
+      "https://i.bandori.party/u/c/transparent/1394Lisa-Imai-Power-1WtYAS.png",
+      "https://i.bandori.party/u/c/transparent/1395Ako-Udagawa-Pure-YK0UiR.png",
+      "https://i.bandori.party/u/c/transparent/1396Rinko-Shirokane-Power-rY2oUp.png",
+      "https://i.bandori.party/u/c/transparent/1397Mashiro-Kurata-Happy-TFoq3I.png",
+      "https://i.bandori.party/u/c/transparent/1398Touko-Kirigaya-Pure-MouI80.png",
+      "https://i.bandori.party/u/c/transparent/1399Nanami-Hiromachi-Power-sSR3U5.png",
+      "https://i.bandori.party/u/c/transparent/1400Tsukushi-Futaba-Power-Yixjrb.png",
+      "https://i.bandori.party/u/c/transparent/1401Rui-Yashio-Happy-vL0BM1.png",
+      "https://i.schoolido.lu/cards/transparent/1600idolizedTransparent.png",
+      "https://i.schoolido.lu/cards/transparent/1601idolizedTransparent.png",
+      "https://i.schoolido.lu/cards/transparent/1602idolizedTransparent.png"
+    ]
+    var chara = document.getElementById("homepage-chara");
+    function Character(num) {
+      var num = Math.floor(Math.random() * img.length);
+      chara.src = img[num];
+    }
+    Character();
+  </script>
   <script src="/assets/js/script.js"></script>
 </body>
 </html>

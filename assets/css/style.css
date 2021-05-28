@@ -88,11 +88,11 @@ nav {
   opacity: 0.6;
 }
 
-.fa-twitter {
+.social .fa-twitter {
   color: #1da1f2;
 }
 
-.fa-instagram {
+.social .fa-instagram {
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
   background-clip: text;
@@ -100,7 +100,7 @@ nav {
   -webkit-text-fill-color: transparent;
 }
 
-.fa-youtube {
+.social .fa-youtube {
   color: #ff0000;
 }
 
@@ -141,6 +141,7 @@ nav {
 
 /* Overlay Menu */
 .overlay {
+  overflow: hidden;
   height: 100%;
   width: 30%;
   position: fixed;
@@ -186,68 +187,291 @@ nav {
 
 /* Homepage */
 .homepage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background-color: #eee;
+  overflow: hidden;
 }
 
-.item1 {
-  grid-area: welcome;
+.homepage-title-container {
+  padding: 24px 0;
+  background-color: #5b97bd;
+  color: #f0f0f0;
+}
+
+.homepage *::selection {
+  user-select: none;
+}
+
+.homepage *::-moz-selection {
+  user-select: none;
+}
+
+@keyframes slideDownTitle {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.homepage-title {
   font-size: 60px;
   font-weight: bold;
-  height: 140px;
+  text-align: center;
+  animation: slideDownTitle 0.75s;
 }
 
-.item2 {
-  grid-area: bandori;
-  background-image: url('/assets/images/bandoribg.jpg');
-  background-size: cover;
+@keyframes fadeInDesc {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.homepage-desc {
+  text-align: center;
+  opacity: 1;
+  animation: fadeInDesc 2.25s;
+}
+
+@keyframes Chara {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.homepage-chara-container {
   display: flex;
-  align-items: flex-end;
   justify-content: center;
 }
 
-.item3 {
-  grid-area: lovelive;
-  background-image: url('/assets/images/lovelivebg.jpg');
-  background-size: cover;
+.homepage-chara {
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 500px;
+  z-index: -1;
+  animation: Chara 2s both;
+  animation-delay: 1.25s;
+  pointer-events: none;
+}
+
+.homepage-menu {
+  display: none;
+}
+
+@keyframes social {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.homepage-social {
+  position: fixed;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.homepage-social a {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.item4 {grid-area: support;}
-.item5 {grid-area: faq;}
-
-.item2, .item3, .item4, .item5 {
-  height: 140px;
-  width: 250px;
-}
-
-.item4 a, .item5 a {
+  margin: 10px;
+  background-color: #f0f0f0;
+  color: #111;
+  width: 50px;
+  height: 50px;
   font-size: 30px;
-  font-weight: bold;
-  color: black;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-areas: 
-    'welcome welcome'
-    'bandori lovelive'
-    'support faq';
-  grid-gap: 10px;
-  padding: 10px;
-}
-
-.grid-container > div {
-  display: flex;
-  align-items: center;
+  text-align: center;
+  border: 1px solid #111;
+  border-radius: 50%;
   justify-content: center;
-  background-color: white;
-  padding: 20px;
+  align-items: center;
+  transition: 0.2s;
+  animation: social 0.25s linear both;
+}
+
+.homepage-social a:hover {
+  color: grey;
+}
+
+.homepage-social a:nth-child(1) {animation-delay: 1.5s;}
+.homepage-social a:nth-child(2) {animation-delay: 1.6s;}
+.homepage-social a:nth-child(3) {animation-delay: 1.7s;}
+
+.homepage-btn {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.homepage-btn button {
+  color: #f0f0f0;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 0;
+  width: 200px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.25s;
+  animation: fadeInButton 1s linear both;
+}
+
+.homepage-btn a:nth-child(1) button {
+  background-color: #e5004f;
+  animation-delay: 0.25s;
+}
+
+.homepage-btn a:nth-child(2) button {
+  background-color: #f0047f;
+  animation-delay: 0.5s;
+}
+
+.homepage-btn a:nth-child(3) button {
+  background-color: #7851be;
+  animation-delay: 0.75s;
+}
+
+.homepage-btn a:nth-child(4) button {
+  background-color: #44f044;
+  animation-delay: 1s;
+}
+
+.homepage-btn a:nth-child(1) button:hover {
+  color: #e5004f;
+  border: 1px solid #e5004f;
+}
+
+.homepage-btn a:nth-child(2) button:hover {
+  color: #f0047f;
+  border: 1px solid #f0047f;
+}
+
+.homepage-btn a:nth-child(3) button:hover {
+  color: #7851be;
+  border: 1px solid #7851be;
+}
+
+.homepage-btn a:nth-child(4) button:hover {
+  color: #44f044;
+  border: 1px solid #44f044;
+}
+
+.homepage-btn a button:hover {
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 1024px) {
+  .homepage-chara {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homepage-desc {
+    font-size: 14px;
+  }
+
+  .homepage-chara {
+    height: 400px;
+  }
+
+  .homepage-btn button {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .homepage-desc {
+    padding: 0 20px;
+  }
+
+  @keyframes menu {
+    from {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .homepage-menu {
+    position: fixed;
+    font-size: 26px;
+    left: 5px;
+    top: 32.25%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: menu 0.25s linear both;
+    animation-delay: 1.5s;
+    z-index: 1;
+  }
+
+  .homepage-btn {
+    display: none;
+  }
+
+  .homepage-btn.show {
+    position: fixed;
+    width: auto;
+    left: 50%;
+    top: 31%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+  }
+
+  .homepage-btn button {
+    width: 200px;
+    animation: none;
+  }
 }
 
 /* Header */
@@ -454,7 +678,7 @@ header a {
   text-decoration: underline;
 }
 
-.download .content {
+.download-content {
   background: #f1f1f1;
   position: absolute;
   left: 50%;
@@ -466,7 +690,7 @@ header a {
   transition: 0.5s;
 }
 
-.download .content.show {
+.download-content.show {
   opacity: 1;
   pointer-events: auto;
 }

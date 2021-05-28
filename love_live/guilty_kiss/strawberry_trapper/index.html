@@ -68,7 +68,7 @@
     var chara = document.getElementById("character");
 
     function Character(num) {
-      var num = Math.floor(Math.random() * 3);
+      var num = Math.floor(Math.random() * img.length);
       chara.style.backgroundImage = 'url("' + img[num] +'")';
       chara.style.backgroundSize = 'auto 250px';
       chara.style.backgroundAttachment = 'fixed';

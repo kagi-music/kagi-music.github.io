@@ -1,3 +1,8 @@
+// Homepage
+document.getElementById('homepage-menu').addEventListener('click', function () {
+  document.getElementById('homepage-btn').classList.toggle('show');
+});
+
 // Overlay Menu
 function Overlay() {
   document.getElementById('overlay').classList.toggle('show');
@@ -23,6 +28,11 @@ $(document).ready(function () {
   });
 });
 
+// Download Button
+function Download() {
+  document.getElementById('DownloadContent').classList.toggle('show');
+}
+
 // Tabs
 function Tabs(evt, song) {
   var i, tabcontent, tablinks;
@@ -39,8 +49,3 @@ function Tabs(evt, song) {
 }
 
 document.getElementById('defaultOpen').click();
-
-// Download Button
-function Download() {
-  document.getElementById('DownloadContent').classList.toggle('show');
-}
