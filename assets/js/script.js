@@ -1,51 +1,106 @@
-// Homepage
-document.getElementById('homepage-menu').addEventListener('click', function () {
-  document.getElementById('homepage-btn').classList.toggle('show');
-});
-
-// Overlay Menu
-function Overlay() {
-  document.getElementById('overlay').classList.toggle('show');
-  if (document.getElementById('menu').innerHTML == '<i class="fas fa-bars"></i>') {
-    document.getElementById('menu').innerHTML = '<i class="fas fa-times"></i>';
-  } else {
-    document.getElementById('menu').innerHTML = '<i class="fas fa-bars"></i>';
-  }
-}
-
 // Back To Top
 $(document).ready(function () {
-  $(window).scroll(function () {
-    if($(this).scrollTop() > 20) {
+  $(window).scroll(function () { 
+    if($(this).scrollTop() > 176 ) {
       $('.back-to-top').fadeIn();
     } else {
       $('.back-to-top').fadeOut();
     }
   });
-
-  $('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 'fast');
+  $('.back-to-top').click(function () { 
+    $('html').animate({scrollTop: 0}, 'fast');
   });
 });
 
-// Download Button
-function Download() {
-  document.getElementById('DownloadContent').classList.toggle('show');
+// Dark Mode
+var i = 0;
+let darkmode = localStorage.getItem('DarkMode');
+const darkmodeToggle = document.getElementById('theme-btn');
+var nav = document.querySelector('nav');
+var line = document.getElementsByClassName('line');
+var container = document.getElementsByClassName('container');
+var card = document.getElementsByClassName('card');
+var downloadlist = document.getElementsByClassName('download-list');
+var footer = document.querySelector('footer');
+
+function enableDarkMode() {
+  localStorage.setItem('DarkMode', 'enabled');
+  darkmodeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  darkmodeToggle.style.transform = 'scaleX(-1)';
+  document.body.classList.add('dark');
+  nav.classList.add('dark');
+  for (i = 0; i < line.length; i++) {
+    line[i].classList.add('dark');
+  }
+  for (i = 0; i < container.length; i++) {
+    container[i].classList.add('dark');
+  }
+  for (i = 0; i < card.length; i++) {
+    card[i].classList.add('dark');
+  }
+  for (i = 0; i < downloadlist.length; i++) {
+    downloadlist[i].classList.add('dark');
+  }
+  footer.classList.add('dark');
 }
 
-// Tabs
-function Tabs(evt, song) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName('tabcontent');
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = 'none';
+function disableDarkMode() {
+  localStorage.setItem('DarkMode', null);
+  darkmodeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  darkmodeToggle.style.transform = 'scaleX(1)';
+  document.body.classList.remove('dark');
+  nav.classList.remove('dark');
+  for (i = 0; i < line.length; i++) {
+    line[i].classList.remove('dark');
   }
-  tablinks = document.getElementsByClassName('tablink');
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(' active', '');
+  for (i = 0; i < container.length; i++) {
+    container[i].classList.remove('dark');
   }
-  document.getElementById(song).style.display = 'block';
-  evt.currentTarget.className += ' active';
+  for (i = 0; i < card.length; i++) {
+    card[i].classList.remove('dark');
+  }
+  for (i = 0; i < downloadlist.length; i++) {
+    downloadlist[i].classList.remove('dark');
+  }
+  footer.classList.remove('dark');
 }
 
-document.getElementById('defaultOpen').click();
+if (darkmode === 'enabled') {
+  enableDarkMode();
+}
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  darkmode = localStorage.getItem('DarkMode');
+  if (darkmode != 'enabled') {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
+
+// Open Menu Overlay
+document.getElementById('menu-btn').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+});
+
+// Close Menu Overlay
+document.getElementById('close-btn').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.remove('show');
+  document.body.style.overflow = 'auto';
+});
+
+// Download
+document.querySelector('.download-btn').addEventListener('click', () => {
+  document.getElementById('download-list').classList.toggle('show');
+  document.getElementById('arrow').classList.toggle('rotate');
+});
+
+// Character
+var chara = document.getElementById('character');
+function character(num) {
+  var num = Math.floor(Math.random() * img.length);
+  chara.src = img[num];
+}
+character();
+

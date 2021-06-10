@@ -11,11 +11,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/icon/kagi-music_favico.png">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script async src="https://arc.io/widget.min.js#K34dUBct"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--<script async src="https://arc.io/widget.min.js#K34dUBct"></script>
+   Global site tag (gtag.js) - Google Analytics 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SGVE78JY4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,53 +24,145 @@
     gtag('js', new Date());
   
     gtag('config', 'G-0SGVE78JY4');
-  </script>
+  </script>-->
 </head>
 <body class="homepage">
-  <div class="homepage-title-container">
-    <div class="homepage-title">KAGI 鍵</div>
-    <div class="homepage-desc">
-      Welcome to my simple website where you can download my version of BanG Dream! and Love Live! guitar tabs.
+  <header><div class="title">KAGI 鍵</div></header>
+  <nav id="nav">
+    <button id="menu-btn" class="menu-btn">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+    <div class="links">
+      <a href="/"><i class="fas fa-home"></i></a>
+      <a href="/bang_dream">BanG Dream!</a>
+      <a href="/love_live">Love Live!</a>
+      <a href="/support">Support</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div id="theme-btn" class="theme-btn"><i class="fas fa-sun"></i></div>
+    <button id="back-to-top" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+  </nav>
+  <div id="menu-overlay" class="menu-overlay">
+    <button id="close-btn" class="close-btn"><i class="fas fa-times"></i></button>
+    <a href="/">Home</i></a>
+    <a href="/bang_dream">BanG Dream!</a>
+    <a href="/love_live">Love Live!</a>
+    <a href="/support">Support</a>
+    <a href="/faq">FAQ</a>
+  </div>
+  <div class="latest-update-container">
+    <div class="latest-update">
+      <h2>Latest Update</h2>
+      <div class="card roselia">
+        <div class="title-container">
+          <div class="title">LOUDER</div>
+        </div>
+        <div class="thumbnail">
+          <img src="https://i.bandori.party/u/s/61LOUDER-0uAQr1.png" alt="LOUDER">
+        </div>
+        <div class="artist-container">
+          <div class="artist">Roselia</div>
+        </div>
+        <div class="overlay">
+          <a href="/bang_dream/roselia/louder"><button class="roselia">View</button></a>
+        </div>
+      </div>
+      <div class="card roselia">
+        <div class="title-container">
+          <div class="title">R</div>
+        </div>
+        <div class="thumbnail">
+          <img src="https://i.bandori.party/u/s/149R-xIRygO.png" alt="R">
+        </div>
+        <div class="artist-container">
+          <div class="artist">Roselia</div>
+        </div>
+        <div class="overlay">
+          <a href="/bang_dream/roselia/r"><button class="roselia">View</button></a>
+        </div>
+      </div>
+      <div class="card guilty-kiss">
+        <div class="title-container">
+          <div class="title">Strawberry Trapper</div>
+        </div>
+        <div class="thumbnail">
+          <img src="https://i.idol.st/u/song/50Strawberry-Trapper-sXq6H1.jpg" alt="Strawberry Trapper">
+        </div>
+        <div class="artist-container">
+          <div class="artist">Guilty Kiss</div>
+        </div>
+        <div class="overlay">
+          <a href="/love_live/guilty_kiss/strawberry_trapper"><button class="guilty-kiss">View</button></a>
+        </div>
+      </div>
+      <div class="card roselia">
+        <div class="title-container">
+          <div class="title"><ruby>右肩の蝶<rt>Migikata no Chou</rt></ruby></div>
+        </div>
+        <div class="thumbnail">
+          <img src="https://i.bandori.party/u/s/277Migikata-no-Chou-R5vPIB.png" alt="右肩の蝶">
+        </div>
+        <div class="artist-container">
+          <div class="artist">Roselia</div>
+        </div>
+        <div class="overlay">
+          <a href="/bang_dream/roselia/migikata_no_chou"><button class="roselia">View</button></a>
+        </div>
+      </div>
+      <div class="card roselia">
+        <div class="title-container">
+          <div class="title">Song I am.</div>
+        </div>
+        <div class="thumbnail">
+          <img src="https://i.bandori.party/u/s/239Song-I-am-eXbxkH.png" alt="Song I am.">
+        </div>
+        <div class="artist-container">
+          <div class="artist">Roselia</div>
+        </div>
+        <div class="overlay">
+          <a href="/bang_dream/roselia/song_i_am"><button class="roselia">View</button></a>
+        </div>
+      </div>
+      <div class="card morfonica">
+        <div class="title-container">
+          <div class="title">Daylight -デイライト-</div>
+        </div>
+        <div class="thumbnail">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/bang-dream-portal/e5f83146-b584-438e-bd52-fe7aeba99808.jpg" alt="Daylight -デイライト-">
+        </div>
+        <div class="artist-container">
+          <div class="artist">Morfonica</div>
+        </div>
+        <div class="overlay">
+          <a href="/bang_dream/morfonica/daylight"><button class="morfonica">View</button></a>
+        </div>
+      </div>
+      <div class="card roselia">
+        <div class="title-container">
+          <div class="title"><ruby>六兆年と一夜物語<rt>Roku Chounen to Ichiya Monogatari</rt></ruby></div>
+        </div>
+        <div class="thumbnail">
+          <img src="https://i.bandori.party/u/s/118Roku-Chounen-to-Ichiya-Monogatari-AQ1YOC.png" alt="六兆年と一夜物語">
+        </div>
+        <div class="artist-container">
+          <div class="artist">Roselia</div>
+        </div>
+        <div class="overlay">
+          <a href="/bang_dream/roselia/roku_chounen_to_ichiya_monogatari"><button class="roselia">View</button></a>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="homepage-chara-container">
-    <img id="homepage-chara" class="homepage-chara" src="#">
-  </div>
-  <div id="homepage-menu" class="homepage-menu"><i class="fas fa-bars"></i></div>
-  <div class="homepage-social">
-    <a href="https://twitter.com/a_miftachul_h" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/a_miftachul_h" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/channel/UCpPwJnqt9OlFFcD4SA6YCpg" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
-  </div>
-  <div id="homepage-btn" class="homepage-btn">
-    <a href="/bang_dream"><button>BanG Dream!</button></a>
-    <a href="/love_live"><button>Love Live!</button></a>
-    <a href="/support"><button>Support</button></a>
-    <a href="/faq"><button>FAQ</button></a>
-  </div>
-  <script>
-    var img = [
-      "https://i.bandori.party/u/c/transparent/1392Yukina-Minato-Happy-H4IiK8.png",
-      "https://i.bandori.party/u/c/transparent/1393Sayo-Hikawa-Cool-TmwE7t.png",
-      "https://i.bandori.party/u/c/transparent/1394Lisa-Imai-Power-1WtYAS.png",
-      "https://i.bandori.party/u/c/transparent/1395Ako-Udagawa-Pure-YK0UiR.png",
-      "https://i.bandori.party/u/c/transparent/1396Rinko-Shirokane-Power-rY2oUp.png",
-      "https://i.bandori.party/u/c/transparent/1397Mashiro-Kurata-Happy-TFoq3I.png",
-      "https://i.bandori.party/u/c/transparent/1398Touko-Kirigaya-Pure-MouI80.png",
-      "https://i.bandori.party/u/c/transparent/1399Nanami-Hiromachi-Power-sSR3U5.png",
-      "https://i.bandori.party/u/c/transparent/1400Tsukushi-Futaba-Power-Yixjrb.png",
-      "https://i.bandori.party/u/c/transparent/1401Rui-Yashio-Happy-vL0BM1.png",
-      "https://i.schoolido.lu/cards/transparent/1600idolizedTransparent.png",
-      "https://i.schoolido.lu/cards/transparent/1601idolizedTransparent.png",
-      "https://i.schoolido.lu/cards/transparent/1602idolizedTransparent.png"
-    ]
-    var chara = document.getElementById("homepage-chara");
-    function Character(num) {
-      var num = Math.floor(Math.random() * img.length);
-      chara.src = img[num];
-    }
-    Character();
-  </script>
+  <footer>
+    <div>All BanG Dream! assets belong to CraftEgg/bushiroad.</div>
+    <div>All Love Live! assets belong to KLabGames/SUNRISE/bushiroad.</div>
+    <div>I do not own any of it.</div>
+    <br>
+    <div>Thanks to <a href="https://bandori.party/" target="_blank">bandori.party</a>/<a href="https://schoolido.lu/" target="_blank">schoolido.lu</a>/<a href="https://idol.st/" target="_blank">idol.st</a>.</div>
+    <div>Copyright &#169; <script type="text/javascript">var year = new Date(); document.write(year.getFullYear());</script> KAGI 鍵.</div>
+  </footer>
   <script src="/assets/js/script.js"></script>
 </body>
 </html>

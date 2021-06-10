@@ -11,47 +11,53 @@
   <meta name="description" content="Frequently Asked Question of KAGI 鍵. Please consider to read this before asking a question.">
   {% include head.html %}
 </head>
-<body>
-  {% include nav.html %}
-  <div class="wrapper">
-    <header>
-      <a href="/">KAGI 鍵</a>
-    </header>
-    <div class="content">
-      <div class="main">
-        <div class="area">
-          <h2>FAQ</h2>
-          <h3>What is the difference between GP and GPX File?</h3>
-          <p>GP is the newest file from Guitar Pro 7. GPX is the older file from Guitar Pro 6.</p>
-          <h3>How to open GP and GPX File?</h3>
-          <p>There are many software to open the file. But I only know these software.</p>
-          <p>PC</p>
-          <ul class="faq">
-            <li><a href="https://www.guitar-pro.com/" target="_blank">Guitar Pro</a></li>
-            <li><a href="http://www.tuxguitar.com.ar/" target="_blank">TuxGuitar</a></li>
-          </ul>
-          <p>Android</p>
-          <ul class="faq">
-            <li><a href="https://play.google.com/store/apps/details?id=com.arobasmusic.guitarpro" target="_blank">Guitar Pro</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=org.herac.tuxguitar.android.activity.admob" target="_blank">TuxGuitar</a></li>
-          </ul>
-          <p>iOS</p>
-          <ul class="faq">
-            <li><a href="https://apps.apple.com/app/guitar-pro/id400666114" target="_blank">Guitar Pro</a></li>
-          </ul>
-          <h3>How to download the file?</h3>
-          <p>Just choose between <strong>GP</strong> or <strong>GPX</strong> and click it. It will open a new window. Click <strong>I'M A HUMAN</strong>. Wait for 3 seconds then click <strong>GET LINK</strong>.</p>
-          <h3>Why don't you upload GP5 file?</h3>
-          <p>GP5 is an old file of  guitar pro. I made the tab using Guitar Pro v7.5. When I export the tab to GP5 the tab will broken because it can't read the new feature of Guitar Pro.</p>
-          <h3>Is this tab 100% accurate?</h3>
-          <p>Of course not. But I will do my best to make it. If you want 100% accurate, just contact the composer or the arranger of the song.</p>
-        </div>
-      </div>
-      {% include sidebar.html %}
+<body class="faq">
+  {% include header.html %}
+  <div class="container">
+    <div class="main">
+      <div class="title">Frequently Asked Questions</div>
+      <li>
+        <h4>What is the difference between GP/GPX File?</h4>
+        <p>GP is the newest file from Guitar Pro 7. GPX is the older file from Guitar Pro 6.</p>
+      </li>
+      <li>
+        <h4 id="how-to-download">How to download GP/GPX file?</h4>
+        <p>1. Just choose between <strong>GP</strong> or <strong>GPX</strong> and click <i class="fas fa-download"></i>. It will open a new window. Click <strong>I'M A HUMAN</strong>.</p>
+        <div class="img-container"><img src="/assets/images/step1.jpg"></div>
+        <p>2. Wait for 3 seconds then click <strong>GET LINK</strong>.</p>
+        <div class="img-container"><img src="/assets/images/step2.jpg"></div>
+        <p>3. Click the download button at the top right.</p>
+        <div class="img-container"><img src="/assets/images/step3.jpg"></div>
+      </li>
+      <li>
+        <h4>How to open GP/GPX File?</h4>
+        <p>There are many software to open the file. But I only know these software.</p>
+        <p>PC</p>
+        <ul class="faq">
+          <li><a href="https://www.guitar-pro.com/" target="_blank">Guitar Pro</a></li>
+          <li><a href="http://www.tuxguitar.com.ar/" target="_blank">TuxGuitar</a></li>
+        </ul>
+        <p>Android</p>
+        <ul class="faq">
+          <li><a href="https://play.google.com/store/apps/details?id=com.arobasmusic.guitarpro" target="_blank">Guitar Pro</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=org.herac.tuxguitar.android.activity.admob" target="_blank">TuxGuitar</a></li>
+        </ul>
+        <p>iOS</p>
+        <ul>
+          <li><a href="https://apps.apple.com/app/guitar-pro/id400666114" target="_blank">Guitar Pro</a></li>
+        </ul>
+      </li>
+      <li>
+        <h4>Why don't you upload GP5 file?</h4>
+        <p>GP5 is an old file of  guitar pro. I made the tab using Guitar Pro 7 or newer. When I export the tab to GP5, the tab will broken because it can't read the new feature of Guitar Pro.</p>
+      </li>
+      <li>
+        <h4>Are these tab 100% accurate?</h4>
+        <p>Of course not. But I will do my best to make it. If you want 100% accurate, just contact the composer or the arranger of the song.</p>
+      </li>
     </div>
+    {% include sidebar.html %}
   </div>
   {% include footer.html %}
-  <button class="back-to-top" id="topbtn"><i class="fas fa-angle-up"></i></button>
-  <script src="/assets/js/script.js"></script>
 </body>
 </html>

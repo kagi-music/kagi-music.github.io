@@ -7,81 +7,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roku Chounen to Ichiya Monogatari | KAGI 鍵</title>
-  <meta name="description" content="Roselia「六兆年と一夜物語」guitar tab.">
+  <title>六兆年と一夜物語 | KAGI 鍵</title>
+  <meta name="description" content="Roselia 「六兆年と一夜物語」 Guitar Tab.">
   {% include head.html %}
 </head>
-<body>
-  {% include nav.html %}
-  <div class="wrapper">
-		<header>
-			<a href=".."><img src="/assets/images/logo_roselia.png" class="responsive" style="max-width: 150px;"></a>
-		</header>
-		<div class="content">
-      <div class="main roselia">
-        <div class="area">
-          <div class="song-title roselia">六兆年と一夜物語</div>
-          <div class="song-title-romaji">Roku Chounen to Ichiya Monogatari</div>
-          <div class="song-cover"><img src="https://i.bandori.party/u/s/118Roku-Chounen-to-Ichiya-Monogatari-AQ1YOC.png" class="responsive" style="max-width: 200px;"></div>
-          <div class="songwriter">
-            <div>Lyrics: kemu</div>
-            <div>Composer: kemu</div>
-            <div>Arrangement: Tomaru Ryouta (Elements Garden)</div>
-          </div>
-          <div class="download roselia">
-            <button class="downloadbtn" onclick="Download()">Download</button>
-            <div id="DownloadContent" class="content">
-              <a href="https://ouo.io/SEWe4o" target="_blank">GP</a>
-              <a href="https://ouo.io/jGsyBQ" target="_blank">GPX</a>
-            </div>
-          </div>
-          <p>Please consider to read the <a href="/faq">FAQ</a> before asking a question.</p>
-          <blockquote>EDIT FOR YOURSELF IS OK, BUT DON'T REUPLOAD IT ANYWHERE, PLEASE APPRECIATE MY EFFORT!</blockquote>
-        </div>
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-          this.page.url = 'https://kagi-music.github.io/bang_dream/roselia/roku_chounen_to_ichiya_monogatari/index.html';
-          this.page.identifier = 'roselia_rokuchounentoichiyamonogatari';
-          };
-            
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = 'https://kagi-ongaku.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<body class="song">
+  {% include header.html %}
+  <div class="container">
+    <div class="main roselia">
+      <div class="title"><ruby>六兆年と一夜物語<rt>Roku Chounen to Ichiya Monogatari</rt></ruby></div>
+      <div class="jacket"><img src="https://i.bandori.party/u/s/118Roku-Chounen-to-Ichiya-Monogatari-AQ1YOC.png" alt="六兆年と一夜物語"></div>
+      <div class="song-writer">
+        <div>Lyrics: kemu</div>
+        <div>Composer: kemu</div>
+        <div>Arrangement: Tomaru Ryouta (Elements Garden)</div>
       </div>
-      {% include sidebar.html %}
-		</div>
-	</div>
-  {% include footer.html %}
-  <div id="character" class="character"></div>
+      <div class="download">
+        <div>
+          <table class="download-btn">
+            <tr>
+              <td><div class="download-text">Download</div></td>
+              <td><div id="arrow" class="arrow"><i class="fas fa-caret-down"></i></div></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table id="download-list" class="download-list">
+            <tr>
+              <td>Guitar Pro 7 or newer (.gp)</td>
+              <td><a href="https://ouo.io/SEWe4o"><i class="fas fa-download"></i></a></td>
+            </tr>
+            <tr>
+              <td>Guitar Pro 6 (.gpx)</td>
+              <td><a href="https://ouo.io/jGsyBQ"><i class="fas fa-download"></i></a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% include sidebar.html %}
+  </div>
+  <img id="character" class="character bandori" src="#">
   <script>
     var img = [
       "https://i.bandori.party/u/cos/chibi/1847u-cos-chibi-tiny-1847u-cos-chibi-FWaRRrYukina-Minato-Pure-chibi-A6RgW5-pn-dbTWqQ.png",
       "https://i.bandori.party/u/cos/chibi/1859u-cos-chibi-tiny-1859u-cos-chibi-86Jg5xSayo-Hikawa-Cool-chibi-eUmaim-png--GnsddA.png",
       "https://i.bandori.party/u/cos/chibi/1853u-cos-chibi-tiny-1853u-cos-chibi-HVvoehRinko-Shirokane-Pure-chibi-eCJFgI--POCFKZ.png",
       "https://i.bandori.party/u/cos/chibi/1856u-cos-chibi-tiny-1856u-cos-chibi-Rhpt4ELisa-Imai-Cool-chibi-w84u2y-png-Zi-vtAU0F.png",
-      "https://i.bandori.party/u/cos/chibi/1850u-cos-chibi-tiny-1850u-cos-chibi-YwGmGFAko-Udagawa-Cool-chibi-XUhJUG-png--86bSam.png",
+      "https://i.bandori.party/u/cos/chibi/1850u-cos-chibi-tiny-1850u-cos-chibi-YwGmGFAko-Udagawa-Cool-chibi-XUhJUG-png--86bSam.png"
     ]
-
-    var chara = document.getElementById("character");
-
-    function Character(num) {
-      var num = Math.floor(Math.random() * img.length);
-      chara.style.backgroundImage = 'url("' + img[num] +'")';
-      chara.style.backgroundSize = 'auto 200px';
-      chara.style.backgroundAttachment = 'fixed';
-      chara.style.backgroundRepeat = 'no-repeat';
-      chara.style.backgroundPosition = '100% 100%';
-    }
-
-    Character();
   </script>
-  <button class="back-to-top" id="topbtn"><i class="fas fa-angle-up"></i></button>
-  <script src="/assets/js/script.js"></script>
+  {% include footer.html %}
 </body>
 </html>

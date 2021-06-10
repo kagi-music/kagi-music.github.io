@@ -8,77 +8,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Strawberry Trapper | KAGI 鍵</title>
-  <meta name="description" content="Guilty Kiss「Strawberry Trapper」guitar tab.">
   {% include head.html %}
 </head>
-<body>
-  {% include nav.html %}
-  <div class="wrapper">
-		<header>
-			<a href=".."><img src="/assets/images/Guilty-Kiss.png" class="responsive" style="max-width: 150px;"></a>
-		</header>
-		<div class="content">
-      <div class="main guilty-kiss">
-        <div class="area">
-          <div class="song-title guilty-kiss">Strawberry Trapper</div>
-          <div class="song-cover"><img src="https://i.idol.st/u/song/50Strawberry-Trapper-sXq6H1.jpg" class="responsive" style="max-width: 200px;"></div>
-          <div class="songwriter">
-            <div>Lyrics: Aki Hata</div>
-            <div>Composer: Masashi Kanasaki</div>
-            <div>Arrangement: Masashi Kanasaki</div>
-          </div>
-          <div class="download guilty-kiss">
-            <button class="downloadbtn" onclick="Download()">Download</button>
-            <div id="DownloadContent" class="content">
-              <a href="https://ouo.io/mBhGiu" target="_blank">GP</a>
-              <a href="https://ouo.io/A3rJxF" target="_blank">GPX</a>
-            </div>
-          </div>
-          <p>Please conside to read the <a href="/faq">FAQ</a> before asking a question.</p>
-          <blockquote>EDIT FOR YOURSELF IS OK, BUT DON'T REUPLOAD IT ANYWHERE, PLEASE APPRECIATE MY EFFORT!</blockquote>
-        </div>
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-          this.page.url = 'https://kagi-music.github.io/love_love/guilty_kiss/strawberry_trapper/index.html';
-          this.page.identifier = 'guiltykiss_strawberrytrapper';
-          };
-            
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = 'https://kagi-ongaku.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<body class="song">
+  {% include header.html %}
+  <div class="container">
+    <div class="main guilty-kiss">
+      <div class="title">Strawberry Trapper</div>
+      <div class="jacket"><img src="https://i.idol.st/u/song/50Strawberry-Trapper-sXq6H1.jpg" alt="Strawberry Trapper"></div>
+      <div class="song-writer">
+        <div>Lyrics: Aki Hata</div>
+        <div>Composer: Masashi Kanasaki</div>
+        <div>Arrangement: Masashi Kanasaki</div>
       </div>
-      {% include sidebar.html %}
-		</div>
-	</div>
-  {% include footer.html %}
-  <div id="character" class="character"></div>
+      <div class="download">
+        <div>
+          <table class="download-btn">
+            <tr>
+              <td><div class="download-text">Download</div></td>
+              <td><div id="arrow" class="arrow"><i class="fas fa-caret-down"></i></div></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table id="download-list" class="download-list">
+            <tr>
+              <td>Guitar Pro 7 or newer (.gp)</td>
+              <td><a href="https://ouo.io/mBhGiu"><i class="fas fa-download"></i></a></td>
+            </tr>
+            <tr>
+              <td>Guitar Pro 6 (.gpx)</td>
+              <td><a href="https://ouo.io/A3rJxF"><i class="fas fa-download"></i></a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% include sidebar.html %}
+  </div>
+  <img id="character" class="character love-live" src="#">
   <script>
     var img = [
       "https://i.schoolido.lu/cards/transparent/1600idolizedTransparent.png",
       "https://i.schoolido.lu/cards/transparent/1601idolizedTransparent.png",
-      "https://i.schoolido.lu/cards/transparent/1602idolizedTransparent.png",
+      "https://i.schoolido.lu/cards/transparent/1602idolizedTransparent.png"
     ]
-
-    var chara = document.getElementById("character");
-
-    function Character(num) {
-      var num = Math.floor(Math.random() * img.length);
-      chara.style.backgroundImage = 'url("' + img[num] +'")';
-      chara.style.backgroundSize = 'auto 250px';
-      chara.style.backgroundAttachment = 'fixed';
-      chara.style.backgroundRepeat = 'no-repeat';
-      chara.style.backgroundPosition = '105% 100%';
-    }
-
-    Character();
   </script>
-  <button class="back-to-top" id="topbtn"><i class="fas fa-angle-up"></i></button>
-  <script src="/assets/js/script.js"></script>
+  {% include footer.html %}
 </body>
 </html>
