@@ -190,6 +190,7 @@ nav .theme-btn {
 .card.roselia .title {color: #34a;}
 .card.morfonica .title {color: #3af;}
 .card.guilty-kiss .title {color: #e06;}
+.card.azuna .title {color: #ff003f;}
 
 .card .thumbnail {
   text-align: center;
@@ -219,6 +220,7 @@ nav .theme-btn {
 .card.roselia .artist {background-color: #34a;}
 .card.morfonica .artist {background-color: #3af;}
 .card.guilty-kiss .artist {background-color: #e06;}
+.card.azuna .artist {background-color: #ff003f;}
 
 .card .overlay {
   position: absolute;
@@ -254,6 +256,7 @@ nav .theme-btn {
 .card .overlay button.roselia {background-color: #34a;}
 .card .overlay button.morfonica {background-color: #3af;}
 .card .overlay button.guilty-kiss {background-color: #e06;}
+.card .overlay button.azuna {background-color: #ff003f;}
 
 /* Content */
 .container {
@@ -377,6 +380,7 @@ nav .theme-btn {
   font-weight: bold;
 }
 .love-live li.guilty-kiss a {color: #e06;}
+.love-live li.azuna a {color: #ff003f;}
 
 /* Song Page */
 .song .main .title {
@@ -391,6 +395,7 @@ nav .theme-btn {
 .song .main.morfonica .title {color: #3af;}
 .song .main.raise-a-suilen .title {color: #39c9c5;}
 .song .main.guilty-kiss .title {color: #e06;}
+.song .main.azuna .title {color: #ff003f;}
 
 .song .jacket {
   text-align: center;
@@ -435,6 +440,7 @@ nav .theme-btn {
 .song .main.morfonica .download .download-btn {background-color: #3af;}
 .song .main.raise-a-suilen .download .download-btn {background-color: #39c9c5;}
 .song .main.guilty-kiss .download .download-btn {background-color: #e06;}
+.song .main.azuna .download .download-btn {background-color: #ff003f;}
 
 .song .main .download .download-text,
 .song .main .download .arrow {
@@ -492,6 +498,7 @@ nav .theme-btn {
 .song .main.morfonica .download-list a {color: #3af;}
 .song .main.raise-a-suilen .download-list a {color: #39c9c5;}
 .song .main.guilty-kiss .download-list a {color: #e06;}
+.song .main.azuna .download-list a {color: #ff003f;}
 
 /* FAQ */
 .faq .main > li {
