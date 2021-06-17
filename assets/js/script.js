@@ -12,6 +12,27 @@ $(document).ready(function () {
   });
 });
 
+// Navigation Bar Link Active
+if (window.location.href.indexOf('bang_dream') > -1 ) {
+  document.getElementById('bandori-link').classList.add('active');
+  document.getElementById('bandori-overlay').classList.add('active');
+}
+
+if (window.location.href.indexOf('love_live') > -1 ) {
+  document.getElementById('lovelive-link').classList.add('active');
+  document.getElementById('lovelive-overlay').classList.add('active');
+}
+
+if (window.location.href.indexOf('support') > -1 ) {
+  document.getElementById('support-link').classList.add('active');
+  document.getElementById('support-overlay').classList.add('active');
+}
+
+if (window.location.href.indexOf('faq') > -1 ) {
+  document.getElementById('faq-link').classList.add('active');
+  document.getElementById('faq-overlay').classList.add('active');
+}
+
 // Dark Mode
 var i = 0;
 let darkmode = localStorage.getItem('DarkMode');
