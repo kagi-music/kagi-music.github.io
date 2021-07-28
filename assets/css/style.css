@@ -3,58 +3,87 @@
   box-sizing: border-box;
 }
 
+:root {
+  --light-1: #f9f9f9;
+  --light-2: #f0f0f0;
+  --light-3: #eee;
+
+  --dark-1: #202225;
+  --dark-2: #292b2f;
+  --dark-3: #36393f;
+  --dark-text: #222;
+
+  --poppin-party: #f37;
+  --afterglow: #e34;
+  --pastel-palettes: #3da;
+  --roselia: #34a;
+  --hello-happy-world: #fd0;
+  --morfonica: #3af;
+  --raise-a-suilen: #39c9c5;
+
+  --otonokizaka: #e4007f;
+  --uranohoshi: #1999d6;
+  --guilty-kiss: #e06;
+  --nijigasaki: #f39800;
+  --azuna: #ff003f;
+  --yuigaoka: #8b4993;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #f0f0f0;
-  color: #202020;
+  background-color: var(--light-2);
+  color: var(--dark-text);
 }
 
 body.dark {
-  background-color: #303030;
-  color: #f9f9f9;
+  background-color: var(--dark-2);
+  color: var(--light-2);
 }
 
 a {
-  color: #5f5fd4;
+  color: #7e7ecc;
   text-decoration: none;
+}
+
+.en {
+  display: none;
+}
+
+.jp {
+  display: none;
 }
 
 /* Header */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 8em;
-  background-color: #99c;
-  user-select: none;
-}
-
-header .title {
-  font-size: 50px;
-  font-weight: 900;
-  color: #f9f9f9;
+  height: 3em;
 }
 
 /* Top Navigation */
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f9f9f9;
-  color: inherit;
-  height: 3em;
+  padding: 0 15px;
+  background-color: var(--dark-1);
+  color: var(--light-2);
   width: 100%;
+  height: 3em;
   border-bottom: 1px solid transparent;
   box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.2);
   user-select: none;
+  z-index: 2;
 }
 
-nav.dark {
-  background-color: #202020;
-  border-bottom: 1px solid #444;
-  box-shadow: none;
+nav .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
 }
 
 nav .menu-btn {
@@ -63,19 +92,18 @@ nav .menu-btn {
   border: none;
   outline: none;
   width: 30px;
-  margin-left: 10px;
 }
 
 nav .menu-btn .line {
-  background-color: #202020;
+  background-color: var(--light-2);
   height: 2px;
   width: 100%;
   margin: 4px 0;
   cursor: pointer;
 }
 
-nav .menu-btn .line.dark {
-  background-color: #f9f9f9;
+nav .links {
+  line-height: 1em;
 }
 
 nav .links a {
@@ -91,90 +119,182 @@ nav .links a:nth-child(3):hover {color: #f0047f;}
 nav .links a:nth-child(4):hover {color: #7851be;}
 nav .links a:nth-child(5):hover {color: #44f044;}
 
-nav .links a:nth-child(2).active {
-  color: #e5004f;
-  border-bottom: 4px solid #e5004f;
-}
-nav .links a:nth-child(3).active {
-  color: #f0047f;
-  border-bottom: 4px solid #f0047f;
-}
-nav .links a:nth-child(4).active {
-  color: #7851be;
-  border-bottom: 4px solid #7851be;
-}
-nav .links a:nth-child(5).active {
-  color: #44f044;
-  border-bottom: 4px solid #44f044;
-}
-
-nav .theme-btn {
-  display: flex;
-  margin-right: 15px;
+nav .lang-btn {
+  width: 52px;
+  text-align: center;
   cursor: pointer;
 }
 
-@media screen and (max-width: 500px) {
+nav .theme-btn {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+nav .social {
+  display: flex;
+}
+
+nav .social > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+}
+
+nav .social a {
+  font-size: 1.5em;
+  color: inherit;
+}
+
+nav .search-btn {
+  cursor: pointer;
+}
+
+nav .search-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  right: 0;
+  width: 400px;
+  height: 3em;
+  background-color: inherit;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+}
+
+nav .search-container.show {
+  transform: translateX(0);
+}
+
+nav .search-container input {
+  padding: 0 15px;
+  width: 90%;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+nav .search-container button {
+  background: none;
+  color: inherit;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+nav .search-container input.dark {
+  background-color: var(--dark-3);
+  color: var(--light-2);
+  border: none;
+}
+
+nav .search-container input::placeholder {
+  color: var(--dark-text);
+}
+
+nav .search-container input.dark::placeholder {
+  color: var(--light-2);
+}
+
+nav .search-list {
+  position: absolute;
+  top: 3em;
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: inherit;
+  background-color: var(--light-1);
+}
+
+nav .search-list.dark {
+  background-color: var(--dark-1);
+}
+
+nav .search-list li a {
+  font-weight: normal;
+  display: block;
+  padding: 6px 18px;
+  color: var(--dark-text);
+}
+
+nav .search-list.dark a {
+  color: var(--light-2);
+}
+
+nav .search-list a:hover {
+  background-color: #dfd9f1;
+}
+
+nav .search-list.dark a:hover {
+  background-color: var(--dark-2);
+}
+
+@media screen and (max-width: 730px) {
   nav .menu-btn {
     display: block;
   }
   nav .links {
     display: none;
   }
+  nav .search-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  nav .search-container input {
+    width: 80%;
+  }
 }
 
 /* Menu Overlay */
 .menu-overlay {
   position: fixed;
-  display: grid;
-  place-items: center;
-  grid-template-areas: 
-    'home home'
-    'bandori lovelive'
-    'support faq';
   top: 0;
   left: 0;
-  width: 100%;
+  width: 180px;
   height: 100%;
-  background-color: inherit;
+  background-color: var(--dark-1);
+  color: var(--light-2);
   transform: translateX(-100%);
-  transition: transform 0.5s;
-  z-index: 2;
+  transition: transform 0.3s;
+  z-index: 1;
 }
 
 .menu-overlay.show {
   transform: translateX(0);
 }
 
-.menu-overlay .close-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: none;
-  color: inherit;
-  font-size: 3em;
-  border: none;
-  outline: none;
-  cursor: pointer;
+.menu-overlay .search-btn {
+  display: none;
+}
+
+.menu-overlay table {
+  position: relative;
+  top: 3em;
+  padding: 0 5px;
+}
+
+.menu-overlay table td {
+  height: 2em;
+}
+
+.menu-overlay table td:first-child {
+  width: 24px;
 }
 
 .menu-overlay a {
-  display: block;
   color: inherit;
-  font-size: 20px;
-  font-weight: bold;
 }
 
-.menu-overlay a:nth-child(2) {grid-area: home;}
-.menu-overlay a:nth-child(3) {grid-area: bandori;}
-.menu-overlay a:nth-child(4) {grid-area: lovelive;}
-.menu-overlay a:nth-child(5) {grid-area: support;}
-.menu-overlay a:nth-child(6) {grid-area: faq;}
-
-.menu-overlay a:nth-child(3).active {color: #e5004f;}
-.menu-overlay a:nth-child(4).active {color: #f0047f;}
-.menu-overlay a:nth-child(5).active {color: #7851be;}
-.menu-overlay a:nth-child(6).active {color: #44f044;}
+.menu-overlay a:hover {
+  background-color: var(--light-3);
+}
 
 /* Homepage */
 .latest-update-container {
@@ -194,25 +314,20 @@ nav .theme-btn {
 }
 
 .card.dark {
-  background-color: #202020;
+  background-color: var(--dark-3);
   border: 1px solid #444;
 }
-
 
 .card .title {
   display: grid;
   place-items: center;
-  height: 1.5em;
+  height: 24px;
+  color: inherit;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
 }
-
-.card.roselia .title {color: #34a;}
-.card.morfonica .title {color: #3af;}
-.card.guilty-kiss .title {color: #e06;}
-.card.azuna .title {color: #ff003f;}
 
 .card .thumbnail {
   text-align: center;
@@ -233,16 +348,16 @@ nav .theme-btn {
 .card .artist {
   padding: 0 10px;
   width: fit-content;
-  color: #f9f9f9;
+  color: var(--light-2);
   font-weight: bold;
   line-height: 1.5em;
   text-align: center;
   border-radius: 20px;
 }
-.card.roselia .artist {background-color: #34a;}
-.card.morfonica .artist {background-color: #3af;}
-.card.guilty-kiss .artist {background-color: #e06;}
-.card.azuna .artist {background-color: #ff003f;}
+.card.roselia .artist {background-color: var(--roselia);}
+.card.morfonica .artist {background-color: var(--morfonica);}
+.card.guilty-kiss .artist {background-color: var(--guilty-kiss);}
+.card.azuna .artist {background-color: var(--azuna);}
 
 .card .overlay {
   position: absolute;
@@ -266,7 +381,7 @@ nav .theme-btn {
 .card .overlay button {
   font-family: 'Titillium Web', sans-serif;
   padding: 6px 14px;
-  color: #f9f9f9;
+  color: var(--light-1);
   border: 1px solid rgb(255, 255, 255, 0.3);
   outline: none;
   font-size: 16px;
@@ -275,10 +390,81 @@ nav .theme-btn {
   text-indent: 1px;
   cursor: pointer;
 }
-.card .overlay button.roselia {background-color: #34a;}
-.card .overlay button.morfonica {background-color: #3af;}
-.card .overlay button.guilty-kiss {background-color: #e06;}
-.card .overlay button.azuna {background-color: #ff003f;}
+.card .overlay button.roselia {background-color: var(--roselia);}
+.card .overlay button.morfonica {background-color: var(--morfonica);}
+.card .overlay button.guilty-kiss {background-color: var(--guilty-kiss);}
+.card .overlay button.azuna {background-color: var(--azuna);}
+
+/* Song List Page */
+.song-list-container {
+  padding: 0 20px 20px;
+}
+
+.song-list-container h2 {
+  line-height: 1em;
+  text-align: center;
+}
+
+.bandori-song-list,
+.love-live-song-list {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+
+.bandori-song-list > div,
+.love-live-song-list > div {
+  justify-self: center;
+  width: 260px;
+}
+
+.bandori-song-list h4,
+.love-live-song-list h4 {
+  line-height: 1em;
+}
+
+.bandori-song-list li,
+.love-live-song-list li {
+  list-style-type: none;
+  line-height: 24px;
+}
+
+.bandori-song-list li a,
+.love-live-song-list li a {
+  display: block;
+  color: inherit;
+}
+
+.bandori-song-list li a:hover,
+.love-live-song-list li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1080px) {
+  .bandori-song-list,
+  .love-live-song-list {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .bandori-song-list,
+  .love-live-song-list {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bandori-song-list,
+  .love-live-song-list {
+    display: block;
+  }
+  .bandori-song-list > div,
+  .love-live-song-list > div {
+    justify-self: center;
+    width: 100%;
+  }
+}
 
 /* Content */
 .container {
@@ -287,13 +473,13 @@ nav .theme-btn {
   grid-template-columns: 70% auto;
   padding: 20px;
   margin: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--light-1);
   border: 1px solid transparent;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 
 .container.dark {
-  background-color: #202020;
+  background-color: var(--dark-3);
   border: 1px solid #444;
   box-shadow: none;
 }
@@ -316,7 +502,7 @@ nav .theme-btn {
 .sidebar .title {
   padding: 0.25vh 0.5ch 0.1vh 0.5ch;
   background-color: #696969;
-  color: #f9f9f9;
+  color: var(--light-1);
   width: fit-content;
   font-size: 1em;
   font-weight: bold;
@@ -331,6 +517,7 @@ nav .theme-btn {
 
 .sidebar .content {
   padding: 10px 0;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {
@@ -347,7 +534,7 @@ nav .theme-btn {
 /* BanG Dream! Page */
 .bandori .band {
   margin: 10px 0;
-  color: #f9f9f9;
+  color: var(--light-1);
   line-height: 2em;
   font-weight: bold;
   text-align: center;
@@ -355,33 +542,18 @@ nav .theme-btn {
   border-radius: 20px;
   user-select: none;
 }
-.bandori .poppin-party .band {background-color: #f37;}
-.bandori .afterglow .band {background-color: #e34;}
-.bandori .pastel-palettes .band {background-color: #3da;}
-.bandori .roselia .band {background-color: #34a;}
-.bandori .hello-happy-world .band {background-color: #fd0;}
-.bandori .morfonica .band {background-color: #3af;}
-.bandori .raise-a-suilen .band {background-color: #39c9c5;}
-
-.bandori li {
-  line-height: 1.5em;
-}
-
-.bandori li a {
-  font-weight: bold;
-}
-.bandori .poppin-party li a {color: #f37;}
-.bandori .afterglow li a {color: #e34;}
-.bandori .pastel-palettes li a {color: #3da;}
-.bandori .roselia li a {color: #34a;}
-.bandori .hello-happy-world li a {color: #fd0;}
-.bandori .morfonica li a {color: #3af;}
-.bandori .raise-a-suilen li a {color: #39c9c5;}
+.bandori .poppin-party .band {background-color: var(--poppin-party);}
+.bandori .afterglow .band {background-color: var(--afterglow);}
+.bandori .pastel-palettes .band {background-color: var(--pastel-palettes);}
+.bandori .roselia .band {background-color: var(--roselia);}
+.bandori .hello-happy-world .band {background-color: var(--hello-happy-world);}
+.bandori .morfonica .band {background-color: var(--morfonica);}
+.bandori .raise-a-suilen .band {background-color: var(--raise-a-suilen);}
 
 /* Love Live! Page */
 .love-live .group {
   margin: 10px 0;
-  color: #f9f9f9;
+  color: var(--light-1);
   line-height: 2em;
   font-weight: bold;
   text-align: center;
@@ -389,35 +561,25 @@ nav .theme-btn {
   border-radius: 20px;
   user-select: none;
 }
-.love-live .otonokizaka .group {background-color: #e4007f;}
-.love-live .uranohoshi .group {background-color: #1999d6;}
-.love-live .nijigasaki .group {background-color: #f39800;}
-.love-live .yuigaoka .group {background-color: #8b4993;}
-
-.love-live li {
-  line-height: 1.5em;
-}
-
-.love-live li a {
-  font-weight: bold;
-}
-.love-live li.guilty-kiss a {color: #e06;}
-.love-live li.azuna a {color: #ff003f;}
+.love-live .otonokizaka .group {background-color: var(--otonokizaka);}
+.love-live .uranohoshi .group {background-color: var(--uranohoshi);}
+.love-live .nijigasaki .group {background-color: var(--nijigasaki);}
+.love-live .yuigaoka .group {background-color: var(--yuigaoka);}
 
 /* Song Page */
 .song .main .title {
   margin-bottom: 10px;
   text-align: center;
 }
-.song .main.poppin-party .title {color: #f37;}
-.song .main.afterglow .title {color: #e34;}
-.song .main.pastel-palettes .title {color: #3da;}
-.song .main.roselia .title {color: #34a;}
-.song .main.hello-happy-world .title {color: #fd0;}
-.song .main.morfonica .title {color: #3af;}
-.song .main.raise-a-suilen .title {color: #39c9c5;}
-.song .main.guilty-kiss .title {color: #e06;}
-.song .main.azuna .title {color: #ff003f;}
+.song .main.poppin-party .title {color: var(--poppin-party);}
+.song .main.afterglow .title {color: var(--afterglow);}
+.song .main.pastel-palettes .title {color: var(--pastel-palettes);}
+.song .main.roselia .title {color: var(--roselia);}
+.song .main.hello-happy-world .title {color: var(--hello-happy-world);}
+.song .main.morfonica .title {color: var(--morfonica);}
+.song .main.raise-a-suilen .title {color: var(--raise-a-suilen);}
+.song .main.guilty-kiss .title {color: var(--guilty-kiss);}
+.song .main.azuna .title {color: var(--azuna);}
 
 .song .jacket {
   text-align: center;
@@ -433,6 +595,10 @@ nav .theme-btn {
   margin-top: 10px;
   font-size: 14px;
   text-align: center;
+}
+
+.song-writer * > div {
+  line-height: 20px;
 }
 
 .song .main .download {
@@ -451,18 +617,18 @@ nav .theme-btn {
 
 .song .main .download .download-btn {
   width: 220px;
-  color: #f9f9f9;
+  color: var(--light-2);
   cursor: pointer;
 }
-.song .main.poppin-party .download .download-btn {background-color: #f37;}
-.song .main.afterglow .download .download-btn {background-color: #e34;}
-.song .main.pastel-palettes .download .download-btn {background-color: #3da;}
-.song .main.roselia .download .download-btn {background-color: #34a;}
-.song .main.hello-happy-world .download .download-btn {background-color: #fd0;}
-.song .main.morfonica .download .download-btn {background-color: #3af;}
-.song .main.raise-a-suilen .download .download-btn {background-color: #39c9c5;}
-.song .main.guilty-kiss .download .download-btn {background-color: #e06;}
-.song .main.azuna .download .download-btn {background-color: #ff003f;}
+.song .main.poppin-party .download .download-btn {background-color: var(--poppin-party);}
+.song .main.afterglow .download .download-btn {background-color: var(--afterglow);}
+.song .main.pastel-palettes .download .download-btn {background-color: var(--pastel-palettes);}
+.song .main.roselia .download .download-btn {background-color: var(--roselia);}
+.song .main.hello-happy-world .download .download-btn {background-color: var(--hello-happy-world);}
+.song .main.morfonica .download .download-btn {background-color: var(--morfonica);}
+.song .main.raise-a-suilen .download .download-btn {background-color: var(--raise-a-suilen);}
+.song .main.guilty-kiss .download .download-btn {background-color: var(--guilty-kiss);}
+.song .main.azuna .download .download-btn {background-color: var(--azuna);}
 
 .song .main .download .download-text,
 .song .main .download .arrow {
@@ -488,7 +654,7 @@ nav .theme-btn {
 }
 
 .song .main .download-list {
-  background-color: #eee;
+  background-color: var(--light-3);
   width: 220px;
   font-size: 14px;
   transform: translateY(-100%);
@@ -496,7 +662,7 @@ nav .theme-btn {
 }
 
 .song .main .download-list.dark {
-  background-color: #303030;
+  background-color: var(--dark-2);
 }
 
 .song .main .download-list.show {
@@ -512,15 +678,15 @@ nav .theme-btn {
   place-items: center;
 }
 
-.song .main.poppin-party .download-list a {color: #f37;}
-.song .main.afterglow .download-list a {color: #e34;}
-.song .main.pastel-palettes .download-list a {color: #3da;}
-.song .main.roselia .download-list a {color: #34a;}
-.song .main.hello-happy-world .download-list a {color: #fd0;}
-.song .main.morfonica .download-list a {color: #3af;}
-.song .main.raise-a-suilen .download-list a {color: #39c9c5;}
-.song .main.guilty-kiss .download-list a {color: #e06;}
-.song .main.azuna .download-list a {color: #ff003f;}
+.song .main.poppin-party .download-list a {color: var(--poppin-party);}
+.song .main.afterglow .download-list a {color: var(--afterglow);}
+.song .main.pastel-palettes .download-list a {color: var(--pastel-palettes);}
+.song .main.roselia .download-list a {color: var(--roselia);}
+.song .main.hello-happy-world .download-list a {color: var(--hello-happy-world);}
+.song .main.morfonica .download-list a {color: var(--morfonica);}
+.song .main.raise-a-suilen .download-list a {color: var(--raise-a-suilen);}
+.song .main.guilty-kiss .download-list a {color: var(--guilty-kiss);}
+.song .main.azuna .download-list a {color: var(--azuna);}
 
 /* FAQ */
 .faq .main > li {
@@ -531,7 +697,7 @@ nav .theme-btn {
   padding: 0.3ch 0.5ch 0.2ch;
   width: fit-content;
   background-color: #696969;
-  color: #f9f9f9;
+  color: var(--light-1);
   user-select: none;
 }
 
@@ -547,19 +713,13 @@ nav .theme-btn {
 
 /* Footer */
 footer {
-  background-color: #f9f9f9;
-  color: inherit;
+  background-color: var(--dark-1);
+  color: var(--light-2);
   padding: 20px;
   font-size: 13px;
   text-align: center;
   box-shadow: 0 -6px 6px -6px rgba(0, 0, 0, 0.2);
   user-select: none;
-}
-
-footer.dark {
-  background-color: #202020;
-  border-top: 1px solid #444;
-  box-shadow: none;
 }
 
 /* Character */
@@ -606,7 +766,7 @@ footer.dark {
   width: 26px;
   height: 26px;
   background-color: #9999cc;
-  color: #f9f9f9;
+  color: var(--light-1);
   border: none;
   outline: none;
   cursor: pointer;

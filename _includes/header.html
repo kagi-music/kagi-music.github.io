@@ -1,4 +1,4 @@
-<header><div class="title">KAGI 鍵</div></header>
+<header></header>
 <nav id="nav">
   <button id="menu-btn" class="menu-btn">
     <div class="line"></div>
@@ -6,20 +6,92 @@
     <div class="line"></div>
   </button>
   <div class="links">
-    <a href="/"><i class="fas fa-home"></i></a>
-    <a href="/bang_dream" id="bandori-link">BanG Dream!</a>
-    <a href="/love_live" id="lovelive-link">Love Live!</a>
-    <a href="/support" id="support-link">Support</a>
-    <a href="/faq" id="faq-link">FAQ</a>
+    <div class="en">
+      <a href="/"><i class="fas fa-home"></i></a>
+      <a href="/bang_dream">BanG Dream!</a>
+      <a href="/love_live">Love Live!</a>
+      <a href="/support">Support</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="jp">
+      <a href="/"><i class="fas fa-home"></i></a>
+      <a href="/bang_dream">バンドリ！</a>
+      <a href="/love_live">ラブライブ！</a>
+      <a href="/support">サポート</a>
+      <a href="/faq">よくある質問</a>
+    </div>
   </div>
-  <div id="theme-btn" class="theme-btn"><i class="fas fa-sun"></i></div>
+  <div class="right">
+    <div id="lang-btn" class="lang-btn">English</div>
+    <div id="theme-btn" class="theme-btn"><i class="fas fa-sun"></i></div>
+    <div class="social">
+      <div><a href="https://www.instagram.com/kagi_music" target="_blank"><i class="fab fa-instagram"></i></a></div>
+      <div><a href="https://www.youtube.com/channel/UCpPwJnqt9OlFFcD4SA6YCpg" target="_blank"><i class="fab fa-youtube"></i></a></div>
+    </div>
+    <div id="search-btn" class="search-btn"><i class="fas fa-search"></i></div>
+  </div>
+  <div class="search-container">
+    <input type="text" id="search-box" placeholder="Search..." autocomplete="off">
+    <button>✕</button>
+    <ul id="search-list" class="search-list">
+      <li><a href="/bang_dream/roselia/r">R</a></li>
+      <li><a href="/bang_dream/morfonica/daylight">Daylight -デイライト-</a></li>
+      <li><a href="/bang_dream/roselia/louder">LOUDER</a></li>
+      <li><a href="/love_live/azuna/maze_town">Maze Town</a></li>
+      <li><a href="/bang_dream/roselia/migikata_no_chou"><div class="en">Migikata no Chou</div><div class="jp">右肩の蝶</div></a></li>
+      <li><a href="/bang_dream/roselia/roku_chounen_to_ichiya_monogatari/"><div class="en">Roku Chounen to Icihya Monogatari</div><div class="jp">六兆年と一夜物語</div></a></li>
+      <li><a href="/bang_dream/roselia/song_i_am/">Song I am.</a></li>
+      <li><a href="/love_live/guilty_kiss/strawberry_trapper">Strawberry Trapper</a></li>
+    </ul>
+  </div>
   <button id="back-to-top" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
 </nav>
 <div id="menu-overlay" class="menu-overlay">
-  <button id="close-btn" class="close-btn">&times;</button>
-  <a href="/">Home</i></a>
-  <a href="/bang_dream" id="bandori-overlay">BanG Dream!</a>
-  <a href="/love_live" id="lovelive-overlay">Love Live!</a>
-  <a href="/support" id="support-overlay">Support</a>
-  <a href="/faq" id="faq-overlay">FAQ</a>
+  <table>
+    <tr>
+      <td><i class="fas fa-home"></i></td>
+      <td>
+        <a href="/">
+          <div class="en">Home</div>
+          <div class="jp">ホーム</div>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><i class="fas fa-tag"></i></td>
+      <td>
+        <a href="/bang_dream">
+          <div class="en">BanG Dream!</div>
+          <div class="jp">バンドリ！</div>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><i class="fas fa-tag"></i></td>
+      <td>
+        <a href="/love_live">
+          <div class="en">Love Live!</div>
+          <div class="jp">ラブライブ！</div>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><i class="fas fa-donate"></i></td>
+      <td>
+        <a href="/support">
+          <div class="en">Support</div>
+          <div class="jp">サポート</div>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><i class="fas fa-question-circle"></i></td>
+      <td>
+        <a href="/faq">
+          <div class="en">FAQ</div>
+          <div class="jp">よくある質問</div>
+        </a>
+      </td>
+    </tr>
+  </table>
 </div>

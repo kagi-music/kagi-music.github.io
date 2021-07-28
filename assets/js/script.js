@@ -12,47 +12,116 @@ $(document).ready(function () {
   });
 });
 
-// Navigation Bar Link Active
-if (window.location.href.indexOf('bang_dream') > -1 ) {
-  document.getElementById('bandori-link').classList.add('active');
-  document.getElementById('bandori-overlay').classList.add('active');
+// Open Search Bar
+document.querySelector('nav .search-btn').addEventListener('click', () => {
+  document.querySelector('nav .search-container').classList.add('show');
+});
+
+document.querySelector('nav .search-container button').addEventListener('click', () => {
+  document.querySelector('nav .search-container').classList.remove('show');
+});
+
+// Search List
+document.getElementById('search-box').addEventListener('keyup', () => {
+  var input, keyword, ul, li, a, i;
+  input = document.getElementById('search-box');
+  keyword = input.value.toLowerCase();
+  ul = document.getElementById('search-list');
+  li = document.querySelectorAll('nav .search-list li');
+
+  if (input.value.length == 0) {
+    ul.style.display = 'none';
+    return 0;
+  } else {
+    ul.style.display = 'block';
+  }
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].querySelectorAll('nav .search-list a')[0];
+    if (a.innerHTML.toLowerCase().indexOf(keyword) > -1) {
+      li[i].style.display = 'block';
+    } else {
+      li[i].style.display = 'none';
+    }
+  }
+});
+
+// Language
+let jpmode = localStorage.getItem('JPMode');
+const langbtn = document.getElementById('lang-btn');
+var en = document.getElementsByClassName('en');
+var jp = document.getElementsByClassName('jp');
+var original = document.querySelectorAll('.original h4');
+var cover = document.querySelectorAll('.cover h4');
+
+function enableJPMode() {
+  localStorage.setItem('JPMode', 'enabled');
+  langbtn.innerHTML = '日本語';
+  for (i = 0; i < en.length; i++) {
+    en[i].style.display = 'none';
+  }
+  for (i = 0; i < jp.length; i++) {
+    jp[i].style.display = 'block';
+  }
+  for (i = 0; i < original.length; i++) {
+    original[i].innerHTML = 'オリジナル';
+  }
+  for (i = 0; i < cover.length; i++) {
+    cover[i].innerHTML = 'カバー';
+  }
 }
 
-if (window.location.href.indexOf('love_live') > -1 ) {
-  document.getElementById('lovelive-link').classList.add('active');
-  document.getElementById('lovelive-overlay').classList.add('active');
+function disableJPMode() {
+  localStorage.setItem('JPMode', null);
+  langbtn.innerHTML = 'English';
+  for (i = 0; i < en.length; i++) {
+    en[i].style.display = 'block';
+  }
+  for (i = 0; i < jp.length; i++) {
+    jp[i].style.display = 'none';
+  }
+  for (i = 0; i < original.length; i++) {
+    original[i].innerHTML = 'Original';
+  }
+  for (i = 0; i < cover.length; i++) {
+    cover[i].innerHTML = 'Cover';
+  }
 }
 
-if (window.location.href.indexOf('support') > -1 ) {
-  document.getElementById('support-link').classList.add('active');
-  document.getElementById('support-overlay').classList.add('active');
+if (jpmode === 'enabled') {
+  enableJPMode();
+} else {
+  disableJPMode();
 }
 
-if (window.location.href.indexOf('faq') > -1 ) {
-  document.getElementById('faq-link').classList.add('active');
-  document.getElementById('faq-overlay').classList.add('active');
-}
+document.getElementById('lang-btn').addEventListener('click', () => {
+  jpmode = localStorage.getItem('JPMode');
+  if (jpmode != 'enabled') {
+    enableJPMode();
+  } else {
+    disableJPMode();
+  }
+});
 
 // Dark Mode
-var i = 0;
+var i, menu, searchbox, searchlist, container, card, downloadlist;
 let darkmode = localStorage.getItem('DarkMode');
 const darkmodeToggle = document.getElementById('theme-btn');
-var nav = document.querySelector('nav');
-var line = document.getElementsByClassName('line');
-var container = document.getElementsByClassName('container');
-var card = document.getElementsByClassName('card');
-var downloadlist = document.getElementsByClassName('download-list');
-var footer = document.querySelector('footer');
+menu = document.getElementById('menu-overlay');
+searchbox = document.querySelector('nav .search-container input');
+searchlist = document.getElementById('search-list');
+container = document.getElementsByClassName('container');
+card = document.getElementsByClassName('card');
+downloadlist = document.getElementsByClassName('download-list');
 
 function enableDarkMode() {
   localStorage.setItem('DarkMode', 'enabled');
   darkmodeToggle.innerHTML = '<i class="fas fa-moon"></i>';
   darkmodeToggle.style.transform = 'scaleX(-1)';
   document.body.classList.add('dark');
-  nav.classList.add('dark');
-  for (i = 0; i < line.length; i++) {
-    line[i].classList.add('dark');
-  }
+  menu.classList.add('dark');
+  searchbox.classList.add('dark');
+  searchlist.classList.add('dark');
   for (i = 0; i < container.length; i++) {
     container[i].classList.add('dark');
   }
@@ -62,7 +131,6 @@ function enableDarkMode() {
   for (i = 0; i < downloadlist.length; i++) {
     downloadlist[i].classList.add('dark');
   }
-  footer.classList.add('dark');
 }
 
 function disableDarkMode() {
@@ -70,10 +138,9 @@ function disableDarkMode() {
   darkmodeToggle.innerHTML = '<i class="fas fa-sun"></i>';
   darkmodeToggle.style.transform = 'scaleX(1)';
   document.body.classList.remove('dark');
-  nav.classList.remove('dark');
-  for (i = 0; i < line.length; i++) {
-    line[i].classList.remove('dark');
-  }
+  menu.classList.remove('dark');
+  searchbox.classList.remove('dark');
+  searchlist.classList.remove('dark');
   for (i = 0; i < container.length; i++) {
     container[i].classList.remove('dark');
   }
@@ -83,7 +150,6 @@ function disableDarkMode() {
   for (i = 0; i < downloadlist.length; i++) {
     downloadlist[i].classList.remove('dark');
   }
-  footer.classList.remove('dark');
 }
 
 if (darkmode === 'enabled') {
@@ -101,14 +167,7 @@ document.getElementById('theme-btn').addEventListener('click', () => {
 
 // Open Menu Overlay
 document.getElementById('menu-btn').addEventListener('click', () => {
-  document.getElementById('menu-overlay').classList.add('show');
-  document.body.style.overflow = 'hidden';
-});
-
-// Close Menu Overlay
-document.getElementById('close-btn').addEventListener('click', () => {
-  document.getElementById('menu-overlay').classList.remove('show');
-  document.body.style.overflow = 'auto';
+  menu.classList.toggle('show');
 });
 
 // Download
@@ -124,4 +183,3 @@ function character(num) {
   chara.src = img[num];
 }
 character();
-
