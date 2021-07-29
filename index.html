@@ -6,124 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KAGI 鍵</title>
   <meta name="description" content="A little piece of BanG Dream! and Love Live! song guitar tab is here.">
-  <meta name="keywords" content="BanG Dream!, バンドリ!, Poppin'Party, Afterglow, Pastel Palettes, Roselia, Hello Happy World!, Morfonica, RAISE A SUILEN, Love Live!, ラブライブ, µ's, Aqours, 虹ヶ咲学園スクールアイドル同好会, 二ジガク, Nijigasaki High School Idol Club, guitar, tab, guitar tab">
   <meta name="google-site-verification" content="o5BCRQkf75VZSnGjs2uhVl-1--tx1t6EoivUf2QBgdg">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="icon" href="/assets/icon/kagi-music_favico.png">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!--<script async src="https://arc.io/widget.min.js#K34dUBct"></script>
-   Global site tag (gtag.js) - Google Analytics 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SGVE78JY4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-0SGVE78JY4');
-  </script>-->
+  <meta name="keywords" content="BanG Dream!, バンドリ!, Poppin'Party, Afterglow, Pastel Palettes, Roselia, Hello Happy World!, Morfonica, RAISE A SUILEN, Love Live!, ラブライブ, µ's, Aqours, 虹ヶ咲学園スクールアイドル同好会, 二ジガク, Nijigasaki High School Idol Club, guitar, tab, guitar tab">
+  {% include head.html %}
 </head>
 <body class="homepage">
-  <header></header>
-  <nav id="nav">
-    <button id="menu-btn" class="menu-btn">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </button>
-    <div class="links">
-      <div class="en">
-        <a href="/"><i class="fas fa-home"></i></a>
-        <a href="/bang_dream">BanG Dream!</a>
-        <a href="/love_live">Love Live!</a>
-        <a href="/support">Support</a>
-        <a href="/faq">FAQ</a>
-      </div>
-      <div class="jp">
-        <a href="/"><i class="fas fa-home"></i></a>
-        <a href="/bang_dream">バンドリ！</a>
-        <a href="/love_live">ラブライブ！</a>
-        <a href="/support">サポート</a>
-        <a href="/faq">よくある質問</a>
-      </div>
-    </div>
-    <div class="right">
-      <div id="lang-btn" class="lang-btn">English</div>
-      <div id="theme-btn" class="theme-btn"><i class="fas fa-sun"></i></div>
-      <div class="social">
-        <div><a href="https://www.instagram.com/kagi_music" target="_blank"><i class="fab fa-instagram"></i></a></div>
-        <div><a href="https://www.youtube.com/channel/UCpPwJnqt9OlFFcD4SA6YCpg" target="_blank"><i class="fab fa-youtube"></i></a></div>
-      </div>
-      <div id="search-btn" class="search-btn"><i class="fas fa-search"></i></div>
-    </div>
-    <div class="search-container">
-      <input type="text" id="search-box" placeholder="Search..." autocomplete="off">
-      <button>✕</button>
-      <ul id="search-list" class="search-list">
-        <li><a href="/bang_dream/roselia/r">R</a></li>
-        <li><a href="/bang_dream/morfonica/daylight">Daylight -デイライト-</a></li>
-        <li><a href="/bang_dream/roselia/louder">LOUDER</a></li>
-        <li><a href="/love_live/azuna/maze_town">Maze Town</a></li>
-        <li><a href="/bang_dream/roselia/migikata_no_chou"><div class="en">Migikata no Chou</div><div class="jp">右肩の蝶</div></a></li>
-        <li><a href="/bang_dream/roselia/roku_chounen_to_ichiya_monogatari/"><div class="en">Roku Chounen to Icihya Monogatari</div><div class="jp">六兆年と一夜物語</div></a></li>
-        <li><a href="/bang_dream/roselia/song_i_am/">Song I am.</a></li>
-        <li><a href="/love_live/guilty_kiss/strawberry_trapper">Strawberry Trapper</a></li>
-      </ul>
-    </div>
-    <button id="back-to-top" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
-  </nav>
-  <div id="menu-overlay" class="menu-overlay">
-    <table>
-      <tr>
-        <td><i class="fas fa-home"></i></td>
-        <td>
-          <a href="/">
-            <div class="en">Home</div>
-            <div class="jp">ホーム</div>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td><i class="fas fa-tag"></i></td>
-        <td>
-          <a href="/bang_dream">
-            <div class="en">BanG Dream!</div>
-            <div class="jp">バンドリ！</div>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td><i class="fas fa-tag"></i></td>
-        <td>
-          <a href="/love_live">
-            <div class="en">Love Live!</div>
-            <div class="jp">ラブライブ！</div>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td><i class="fas fa-donate"></i></td>
-        <td>
-          <a href="/support">
-            <div class="en">Support</div>
-            <div class="jp">サポート</div>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td><i class="fas fa-question-circle"></i></td>
-        <td>
-          <a href="/faq">
-            <div class="en">FAQ</div>
-            <div class="jp">よくある質問</div>
-          </a>
-        </td>
-      </tr>
-    </table>
-  </div>
+  {% include header.html %}
   <div class="latest-update-container">
     <div class="latest-update">
       <h2>Latest Update</h2>
@@ -245,14 +133,6 @@
       </div>
     </div>
   </div>
-  <footer>
-    <div>All BanG Dream! assets belong to CraftEgg/bushiroad.</div>
-    <div>All Love Live! assets belong to KLabGames/SUNRISE/bushiroad.</div>
-    <div>I do not own any of it.</div>
-    <br>
-    <div>Thanks to <a href="https://bandori.party/" target="_blank">bandori.party</a>/<a href="https://schoolido.lu/" target="_blank">schoolido.lu</a>/<a href="https://idol.st/" target="_blank">idol.st</a>.</div>
-    <div>Copyright &#169; <script type="text/javascript">var year = new Date(); document.write(year.getFullYear());</script> KAGI 鍵.</div>
-  </footer>
-  <script src="/assets/js/script.js"></script>
+  {% include footer.html %}
 </body>
 </html>
