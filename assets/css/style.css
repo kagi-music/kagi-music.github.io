@@ -418,9 +418,18 @@ nav .search-list.dark a:hover {
   width: 260px;
 }
 
+.song-type {
+  display: flex;
+  justify-content: center;
+}
+
 .bandori-song-list h4,
 .love-live-song-list h4 {
+  padding: 4px;
+  color: var(--light-2);
   line-height: 1em;
+  text-align: center;
+  user-select: none;
 }
 
 .bandori-song-list li,
@@ -575,6 +584,10 @@ nav .search-list.dark a:hover {
 .love-live .uranohoshi .group {background-color: var(--uranohoshi);}
 .love-live .nijigasaki .group {background-color: var(--nijigasaki);}
 .love-live .yuigaoka .group {background-color: var(--yuigaoka);}
+
+.love-live-song-list .unit h4 {
+  background-color: black;
+}
 
 /* Song Page */
 .song .main .title {
