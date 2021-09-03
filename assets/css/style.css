@@ -550,6 +550,16 @@ nav .search-list.dark a:hover {
 .bandori .morfonica .band {background-color: var(--morfonica);}
 .bandori .raise-a-suilen .band {background-color: var(--raise-a-suilen);}
 
+.bandori-song-list .original h4 {
+  width: 100px;
+  background-color: #33adff;
+}
+
+.bandori-song-list .cover h4 {
+  width: 100px;
+  background-color: #ffaf33;
+}
+
 /* Love Live! Page */
 .love-live .group {
   margin: 10px 0;
