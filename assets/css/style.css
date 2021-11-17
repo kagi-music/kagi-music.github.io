@@ -354,6 +354,7 @@ nav .search-list.dark a:hover {
   text-align: center;
   border-radius: 20px;
 }
+.card.poppin-party .artist {background-color: var(--poppin-party);}
 .card.roselia .artist {background-color: var(--roselia);}
 .card.morfonica .artist {background-color: var(--morfonica);}
 .card.guilty-kiss .artist {background-color: var(--guilty-kiss);}
@@ -390,6 +391,7 @@ nav .search-list.dark a:hover {
   text-indent: 1px;
   cursor: pointer;
 }
+.card .overlay button.poppin-party {background-color: var(--poppin-party);}
 .card .overlay button.roselia {background-color: var(--roselia);}
 .card .overlay button.morfonica {background-color: var(--morfonica);}
 .card .overlay button.guilty-kiss {background-color: var(--guilty-kiss);}
