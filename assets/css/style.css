@@ -227,6 +227,10 @@ nav .search-list.dark a {
 }
 
 nav .search-list a:hover {
+  font-weight: bold;
+}
+
+nav .search-list a:hover {
   background-color: #dfd9f1;
 }
 
@@ -448,7 +452,7 @@ nav .search-list.dark a:hover {
 
 .bandori-song-list li a:hover,
 .love-live-song-list li a:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1080px) {
@@ -790,7 +794,7 @@ footer {
   bottom: 5px;
   width: 26px;
   height: 26px;
-  background-color: #9999cc;
+  background-color: #99c;
   color: var(--light-1);
   border: none;
   outline: none;
