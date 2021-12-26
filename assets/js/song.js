@@ -13,7 +13,7 @@ $(document).ready(function () {
 });
 
 // Counter
-var i;
+let i;
 
 // Open Search Bar
 const navSearchBtn = document.querySelector('nav .search-btn');
@@ -80,7 +80,6 @@ const menu = document.getElementById('menu-overlay');
 const searchBox = document.querySelector('nav .search-container input');
 const searchList = document.getElementById('search-list');
 const container = document.getElementsByClassName('container');
-const card = document.getElementsByClassName('card');
 const downloadList = document.getElementById('download-list');
 
 function enableDarkMode() {
@@ -92,7 +91,6 @@ function enableDarkMode() {
   searchBox.classList.add('dark');
   searchList.classList.add('dark');
   for (i = 0; i < container.length; i++) container[i].classList.add('dark');
-  for (i = 0; i < card.length; i++) card[i].classList.add('dark');
   downloadList.classList.add('dark');
 }
 
@@ -105,7 +103,6 @@ function disableDarkMode() {
   searchBox.classList.remove('dark');
   searchList.classList.remove('dark');
   for (i = 0; i < container.length; i++) container[i].classList.remove('dark');
-  for (i = 0; i < card.length; i++) card[i].classList.remove('dark');
   downloadList.classList.remove('dark');
 }
 

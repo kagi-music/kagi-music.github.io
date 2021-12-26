@@ -13,7 +13,7 @@ $(document).ready(function () {
 });
 
 // Counter
-var i;
+let i;
 
 // Open Search Bar
 const navSearchBtn = document.querySelector('nav .search-btn');
@@ -79,9 +79,7 @@ const darkModeToggle = document.getElementById('theme-btn');
 const menu = document.getElementById('menu-overlay');
 const searchBox = document.querySelector('nav .search-container input');
 const searchList = document.getElementById('search-list');
-const container = document.getElementsByClassName('container');
 const card = document.getElementsByClassName('card');
-const downloadList = document.getElementById('download-list');
 
 function enableDarkMode() {
   localStorage.setItem('DarkMode', 'enabled');
@@ -91,9 +89,7 @@ function enableDarkMode() {
   menu.classList.add('dark');
   searchBox.classList.add('dark');
   searchList.classList.add('dark');
-  for (i = 0; i < container.length; i++) container[i].classList.add('dark');
   for (i = 0; i < card.length; i++) card[i].classList.add('dark');
-  downloadList.classList.add('dark');
 }
 
 function disableDarkMode() {
@@ -104,9 +100,7 @@ function disableDarkMode() {
   menu.classList.remove('dark');
   searchBox.classList.remove('dark');
   searchList.classList.remove('dark');
-  for (i = 0; i < container.length; i++) container[i].classList.remove('dark');
   for (i = 0; i < card.length; i++) card[i].classList.remove('dark');
-  downloadList.classList.remove('dark');
 }
 
 if (darkMode === 'enabled') enableDarkMode();
@@ -118,17 +112,3 @@ document.getElementById('theme-btn').addEventListener('click', () => {
 
 // Open Menu Overlay
 document.getElementById('menu-btn').addEventListener('click', () => menu.classList.toggle('show'));
-
-// Download
-document.querySelector('.download-btn').addEventListener('click', () => {
-  downloadList.classList.toggle('show');
-  document.getElementById('arrow').classList.toggle('rotate');
-});
-
-// Character
-const chara = document.getElementById('character');
-function character(num) {
-  var num = Math.floor(Math.random() * img.length);
-  chara.src = img[num];
-}
-character();
