@@ -1,19 +1,35 @@
-// Back To Top
-$(document).ready(function () {
-  $(window).scroll(function () { 
-    if($(this).scrollTop() > 176 ) {
-      $('.back-to-top').fadeIn();
-    } else {
-      $('.back-to-top').fadeOut();
-    }
-  });
-  $('.back-to-top').click(function () { 
-    $('html').animate({scrollTop: 0}, 'fast');
-  });
+// Preloader
+const preloader = document.getElementById('preloader');
+window.addEventListener('load', () => {
+  preloader.classList.add('fade-out');
+  setTimeout(() => preloader.className = 'hidden', 1000);
 });
 
 // Counter
-var i;
+let i;
+
+// Dark Mode
+let darkMode = localStorage.getItem('DarkMode');
+const themeToggleBtn = document.getElementById('theme-btn');
+
+function enableDarkMode() {
+  localStorage.setItem('DarkMode', 'enabled');
+  themeToggleBtn.innerHTML = '<i class="fa-solid fa-cloud-moon"></i>'
+  document.body.classList.add('dark');
+}
+
+function disableDarkMode() {
+  localStorage.setItem('DarkMode', null);
+  themeToggleBtn.innerHTML = '<i class="fa-solid fa-cloud-sun"></i>'
+  document.body.classList.remove('dark');
+}
+
+if (darkMode === 'enabled') enableDarkMode();
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  darkMode = localStorage.getItem('DarkMode');
+  darkMode != 'enabled' ? enableDarkMode() : disableDarkMode();
+});
 
 // Open Search Bar
 const navSearchBtn = document.querySelector('nav .search-btn');
@@ -40,30 +56,28 @@ document.getElementById('search-box').addEventListener('keyup', () => {
   }
 });
 
+// Open Menu Overlay
+const menu = document.getElementById('menu-overlay');
+document.getElementById('menu-btn').addEventListener('click', () => menu.classList.toggle('show'));
+
 // Language
 let jpMode = localStorage.getItem('JPMode');
-const langBtn = document.getElementById('lang-btn');
+const langBtn = document.querySelector('.lang-btn .text');
 const en = document.getElementsByClassName('en');
 const jp = document.getElementsByClassName('jp');
-const original = document.querySelectorAll('.original h4');
-const cover = document.querySelectorAll('.cover h4');
 
 function enableJPMode() {
   localStorage.setItem('JPMode', 'enabled');
   langBtn.innerHTML = '日本語';
   for (i = 0; i < en.length; i++) en[i].style.display = 'none';
-  for (i = 0; i < jp.length; i++) jp[i].style.display = 'block';
-  for (i = 0; i < original.length; i++) original[i].innerHTML = 'オリジナル';
-  for (i = 0; i < cover.length; i++) cover[i].innerHTML = 'カバー';
+  for (i = 0; i < jp.length; i++) jp[i].style.display = 'inline';
 }
 
 function disableJPMode() {
   localStorage.setItem('JPMode', null);
   langBtn.innerHTML = 'English';
-  for (i = 0; i < en.length; i++) en[i].style.display = 'block';
+  for (i = 0; i < en.length; i++) en[i].style.display = 'inline';
   for (i = 0; i < jp.length; i++) jp[i].style.display = 'none';
-  for (i = 0; i < original.length; i++) original[i].innerHTML = 'Original';
-  for (i = 0; i < cover.length; i++) cover[i].innerHTML = 'Cover';
 }
 
 jpMode === 'enabled' ? enableJPMode() : disableJPMode();
@@ -73,62 +87,14 @@ document.getElementById('lang-btn').addEventListener('click', () => {
   jpMode != 'enabled' ? enableJPMode() : disableJPMode();
 });
 
-// Dark Mode
-let darkMode = localStorage.getItem('DarkMode');
-const darkModeToggle = document.getElementById('theme-btn');
-const menu = document.getElementById('menu-overlay');
-const searchBox = document.querySelector('nav .search-container input');
-const searchList = document.getElementById('search-list');
-const container = document.getElementsByClassName('container');
-const card = document.getElementsByClassName('card');
-const downloadList = document.getElementById('download-list');
+// Back to Top
+const topBtn = document.getElementById('back-to-top');
 
-function enableDarkMode() {
-  localStorage.setItem('DarkMode', 'enabled');
-  darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  darkModeToggle.style.transform = 'scaleX(-1)';
-  document.body.classList.add('dark');
-  menu.classList.add('dark');
-  searchBox.classList.add('dark');
-  searchList.classList.add('dark');
-  for (i = 0; i < container.length; i++) container[i].classList.add('dark');
-  for (i = 0; i < card.length; i++) card[i].classList.add('dark');
-  downloadList.classList.add('dark');
-}
-
-function disableDarkMode() {
-  localStorage.setItem('DarkMode', null);
-  darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  darkModeToggle.style.transform = 'scaleX(1)';
-  document.body.classList.remove('dark');
-  menu.classList.remove('dark');
-  searchBox.classList.remove('dark');
-  searchList.classList.remove('dark');
-  for (i = 0; i < container.length; i++) container[i].classList.remove('dark');
-  for (i = 0; i < card.length; i++) card[i].classList.remove('dark');
-  downloadList.classList.remove('dark');
-}
-
-if (darkMode === 'enabled') enableDarkMode();
-
-document.getElementById('theme-btn').addEventListener('click', () => {
-  darkMode = localStorage.getItem('DarkMode');
-  darkMode != 'enabled' ? enableDarkMode() : disableDarkMode();
+window.addEventListener('scroll', () => {
+  let y = window.scrollY || document.body.scrollTop;
+  y > 48 ? topBtn.classList.add('show') : topBtn.classList.remove('show');
 });
 
-// Open Menu Overlay
-document.getElementById('menu-btn').addEventListener('click', () => menu.classList.toggle('show'));
-
-// Download
-document.querySelector('.download-btn').addEventListener('click', () => {
-  downloadList.classList.toggle('show');
-  document.getElementById('arrow').classList.toggle('rotate');
+topBtn.addEventListener('click', () => {
+  window.scrollTo({top: 0, behavior: "smooth"});
 });
-
-// Character
-const chara = document.getElementById('character');
-function character(num) {
-  var num = Math.floor(Math.random() * img.length);
-  chara.src = img[num];
-}
-character();

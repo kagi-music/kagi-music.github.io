@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body {% if page.categories -%}
+  class="{{ page.categories }}"
+{%- endif %}>
+  {% include preloader.html %}
+  {% include header.html %}
+  {% if page.url == "/" %}
+    <main class="latest-update-container" role="main">
+      {{ content }}
+    </main>
+  {% else %}
+  <div class="container">
+    <main role="main">
+      {{ content }}
+    </main>
+    {% include sidebar.html %}
+  </div>
+  {% endif %}
+  {% include footer.html %}
+  <script src="/assets/js/script.js"></script>
+  {% if page.url != "/" %}
+    <script src="/assets/js/main.js"></script>
+  {% endif %}
+</body>
+</html>

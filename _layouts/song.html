@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body class="song">
+  {% include preloader.html %}
+  {% include header.html %}
+  <div class="container">
+    <main class="{% if page.franchise == 'bandori' -%}
+      {{ page.band -}}
+    {% elsif page.franchise == 'love-live' -%}
+      {{ page.group -}}
+    {% endif %}" role="main">
+      {{ content }}
+    </main>
+    {% include sidebar.html %}
+  </div>
+  <img id="character" class="character {{ page.franchise }}" src="#">
+  {% include footer.html %}
+  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/song.js"></script>
+</body>
+</html>
