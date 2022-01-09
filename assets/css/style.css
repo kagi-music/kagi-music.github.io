@@ -272,7 +272,7 @@ template {
   height: 20px;
   background-color: transparent;
   border: 20px solid;
-  border-color: transparent var(--light-3) transparent var(--light-3);
+  border-color: transparent var(--light-3);
 }
 
 @keyframes spin {
