@@ -62,20 +62,17 @@ document.getElementById('menu-btn').addEventListener('click', () => menu.classLi
 
 // Language
 let jpMode = localStorage.getItem('JPMode');
-const langBtn = document.querySelector('.lang-btn .text');
 const en = document.getElementsByClassName('en');
 const jp = document.getElementsByClassName('jp');
 
 function enableJPMode() {
   localStorage.setItem('JPMode', 'enabled');
-  langBtn.innerHTML = '日本語';
   for (i = 0; i < en.length; i++) en[i].style.display = 'none';
   for (i = 0; i < jp.length; i++) jp[i].style.display = 'inline';
 }
 
 function disableJPMode() {
   localStorage.setItem('JPMode', null);
-  langBtn.innerHTML = 'English';
   for (i = 0; i < en.length; i++) en[i].style.display = 'inline';
   for (i = 0; i < jp.length; i++) jp[i].style.display = 'none';
 }
