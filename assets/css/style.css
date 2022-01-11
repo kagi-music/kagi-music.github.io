@@ -227,7 +227,7 @@ template {
 /* Preloader */
 .preloader {
   position: fixed;
-  inset: 0 0 0 0;
+  inset: 0;
   background-color: var(--light-3);
   opacity: 1;
   z-index: 3;
@@ -250,7 +250,7 @@ template {
   content: "";
   display: block;
   position: absolute;
-  inset: 0 0 0 0;
+  inset: 0;
   border: 1px solid darkcyan;
   border-radius: 50%;
   animation: ripple 1.5s infinite;
@@ -777,7 +777,7 @@ nav .search-list a:hover {
 
 .song-list-wrapper {
   position: fixed;
-  inset: 0 0 0 0;
+  inset: 0;
   opacity: 0;
   background-color: rgba(0, 0, 0, .5);
   pointer-events: none;
@@ -948,28 +948,28 @@ ul li.shizuku::before { background-image: url(https://static.wikia.nocookie.net/
   height: 2rem;
 }
 
-.song main .download .download-btn {
+.song main .download-btn {
   width: 220px;
   color: var(--light-2);
   cursor: pointer;
 }
-.song main.poppin-party .download .download-btn {background-color: var(--poppin-party);}
-.song main.afterglow .download .download-btn {background-color: var(--afterglow);}
-.song main.pastel-palettes .download .download-btn {background-color: var(--pastel-palettes);}
-.song main.roselia .download .download-btn {background-color: var(--roselia);}
-.song main.hello-happy-world .download .download-btn {background-color: var(--hello-happy-world);}
-.song main.morfonica .download .download-btn {background-color: var(--morfonica);}
-.song main.raise-a-suilen .download .download-btn {background-color: var(--raise-a-suilen);}
-.song main.guilty-kiss .download .download-btn {background-color: var(--guilty-kiss);}
-.song main.azuna .download .download-btn {background-color: var(--azuna);}
+.song main.poppin-party .download-btn { background-color: var(--poppin-party); }
+.song main.afterglow .download-btn { background-color: var(--afterglow); }
+.song main.pastel-palettes .download-btn { background-color: var(--pastel-palettes); }
+.song main.roselia .download-btn { background-color: var(--roselia); }
+.song main.hello-happy-world .download-btn { background-color: var(--hello-happy-world); }
+.song main.morfonica .download-btn { background-color: var(--morfonica); }
+.song main.raise-a-suilen .download-btn { background-color: var(--raise-a-suilen); }
+.song main.guilty-kiss .download-btn { background-color: var(--guilty-kiss); }
+.song main.azuna .download-btn { background-color: var(--azuna); }
 
-.song main .download .download-text,
-.song main .download .arrow {
+.song main .download-text,
+.song main .arrow {
   display: grid;
   place-items: center;
 }
 
-.song main .download .arrow.rotate {
+.song main .arrow.rotate {
   transform: rotate(180deg);
 }
 
@@ -1134,12 +1134,14 @@ footer {
 }
 
 .character.bandori {
-  inset: auto 5px 5px auto;
+  right: 5px;
+  bottom: 5px;
   max-height: 150px;
 }
 
 .character.love-live {
-  inset: auto -30px 0 auto;
+  right: -30px;
+  bottom: 0;
   max-height: 200px;
 }
 
@@ -1155,7 +1157,8 @@ footer {
   position: fixed;
   display: grid;
   place-items: center;
-  inset: auto 5px 5px auto;
+  right: 5px;
+  bottom: 5px;
   opacity: 0;
   width: 26px;
   height: 26px;
