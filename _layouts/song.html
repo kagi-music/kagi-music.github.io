@@ -12,11 +12,68 @@
     {% elsif page.franchise == 'love-live' -%}
       {{ page.group -}}
     {% endif %}" role="main">
-      {{ content }}
+    <div class="title">{{ page.song_title }}</div>
+    <div class="jacket"><img src="{{ page.song_img }}" alt="{{ page.title }}"></div>
+    <div class="song-writer">
+      <div class="en">
+        <div>Lyrics: {{ page.lyrics_en }}</div>
+        <div>Composer: {{ page.composer_en }}</div>
+        <div>Arrangement: {{ page.arrangement_en }}</div>
+      </div>
+      <div class="jp">
+        <div>作詞 : {{ page.lyrics_jp }}</div>
+        <div>作曲 : {{ page.composer_jp }}</div>
+        <div>編曲 : {{ page.arrangement_jp }}</div>
+      </div>
+    </div>
+    <div class="download">
+      <div class="download-btn-wrapper">
+        <table class="download-btn">
+          <tr>
+            <td><div class="download-text">Download</div></td>
+            <td><div id="arrow" class="arrow"><i class="fa-solid fa-caret-down"></i></div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="download-list-wrapper">
+        <table id="download-list" class="download-list">
+          <tr>
+            <td>Guitar Pro 7 or newer (.gp)</td>
+            <td><a href="{{ page.gp_link}}" target="_blank"><i class="fa-solid fa-download"></i></i></a></td>
+          </tr>
+          <tr>
+            <td>Guitar Pro 6 (.gpx)</td>
+            <td><a href="{{ page.gpx_link }}" target="_blank""><i class="fa-solid fa-download"></i></i></a></td>
+          </tr>
+          {% if page.pdf_link %}
+            <tr>
+              <td>PDF</td>
+              <td><a href="{{ page.pdf_link }}" target="_blank"><i class="fa-solid fa-download"></i></i></a></td>
+            </tr>
+          {% endif %}
+        </table>
+      </div>
+    </div>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+      this.page.url = '{{ page.disqus_url }}';
+      this.page.identifier = '{{ page.disqus_id }}';
+      };
+    
+      (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://kagi-music.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </main>
     {% include sidebar.html %}
   </div>
   <img id="character" class="character {{ page.franchise }}" src="#">
+  {{ content }}
   {% include footer.html %}
   <script src="/assets/js/script.min.js"></script>
   <script src="/assets/js/song.min.js"></script>

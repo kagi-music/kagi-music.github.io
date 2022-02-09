@@ -3,8 +3,8 @@
 <head>
   {% include head.html %}
 </head>
-<body {% if page.categories -%}
-  class="{{ page.categories }}"
+<body {% if page.category -%}
+  class="{{ page.category }}"
 {%- endif %}>
   {% include preloader.html %}
   {% include header.html %}

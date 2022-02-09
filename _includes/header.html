@@ -54,7 +54,9 @@
     <input type="text" id="search-box" placeholder="Search..." autocomplete="off">
     <button>✕</button>
     <ul id="search-list" class="search-list">
-      {% include search-list.html %}
+      {%- for song in site.data.song_list %}
+      <li><a href="{{ song.link }}">{{ song.title }}</a></li>
+      {%- endfor %}
     </ul>
   </div>
 </nav>
